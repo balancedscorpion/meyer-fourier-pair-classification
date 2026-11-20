@@ -1,0 +1,160 @@
+{
+  "version": "v0.4",
+  "project": {
+    "name": "Annihilation and finite-comb classification from finite lower density on one ray",
+    "description": "Let T be a tempered distribution on the real line with value-only atomic records for T and its Fourier transform on locally finite carriers. If the point count on either ray of the physical carrier is bounded by C times the radius along arbitrarily large radii, a nonzero finite real-frequency exponential polynomial annihilates T. The opposite carrier only needs to be locally finite for this implication. When the counted carrier is the actual support and the centred count of the opposite carrier has zero quadratic lower density, both records are finite sums of translated and modulated lattice Dirac combs. The latter conclusion also holds with the Fourier record as the counted actual support. The radii witnessing lower density may be sparse.",
+    "authors": [
+      "Jamie Martin"
+    ],
+    "responsible_maintainers": [
+      "Jamie Martin"
+    ],
+    "license": "MIT"
+  },
+  "classification": {
+    "arxiv": [
+      "math.CA",
+      "math.FA"
+    ],
+    "msc2020": [
+      "42A38",
+      "46F12"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Annihilation and finite-comb classification from finite lower density on one ray",
+      "authors": [
+        "Jamie Martin"
+      ],
+      "type": "other",
+      "id": "https://github.com/ls558/MeyerGeneralProblem/tree/b0afd8d8ab21ccb80c4a6645c8887c892377669f",
+      "relationship": "formalizes",
+      "author_endorsement": "participated",
+      "note": "Pinned MeyerGeneralProblem argument. Detailed authorship, prior inputs and agent review are recorded in docs/PROVENANCE.md."
+    },
+    {
+      "title": "Oscillation of Fourier integrals with a spectral gap",
+      "authors": [
+        "Alexandre Eremenko",
+        "Dmitry Novikov"
+      ],
+      "type": "paper",
+      "id": "doi:10.1016/S0021-7824(03)00064-3",
+      "relationship": "adapts",
+      "author_endorsement": "not-contacted",
+      "note": "Prior sign-change bound used by the value-only gap detector. The separate finite-prefix argument is from PR #1031."
+    }
+  ],
+  "related_formalizations": [
+    {
+      "id": "https://github.com/ls558/MeyerGeneralProblem/tree/43a4a33069b48d7f303113a3a2ffab25c15f4c8f",
+      "relationship": "adapts",
+      "note": "Ports the proof closure from the reviewed merge. All substantive Lean proofs are included in this repository."
+    }
+  ],
+  "status": {
+    "scope": "Let T be a tempered distribution on the real line with value-only atomic records for T and its Fourier transform on locally finite carriers. If the point count on either ray of the physical carrier is bounded by C times the radius along arbitrarily large radii, a nonzero finite real-frequency exponential polynomial annihilates T. The opposite carrier only needs to be locally finite for this implication. When the counted carrier is the actual support and the centred count of the opposite carrier has zero quadratic lower density, both records are finite sums of translated and modulated lattice Dirac combs. The latter conclusion also holds with the Fourier record as the counted actual support. The radii witnessing lower density may be sparse.",
+    "sorry_count": 0,
+    "sorry_in_definitions": 0,
+    "axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "main_results": [
+      {
+        "declaration": "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.exists_finiteExponentialAnnihilator_of_finite_lower_ray_count",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_finite_lower_ray_count",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_fourier_finite_lower_ray_count",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      }
+    ],
+    "notes": "The counts refer to Solution. Intentional Challenge holes are named in Comparator. The permitted axiom set bounds dependencies. Use the mechanical report for a check of the exact revision."
+  },
+  "fidelity": {
+    "divergences": "The compared research declarations retain the original theorem names and types. Supporting comparison theorems specify the meanings of named Challenge definition holes on all arguments used by the public claims."
+  },
+  "automation": {
+    "methods": [
+      {
+        "method": "agent",
+        "tool_setup": "AI systems in the upstream Meyer research and Lean development, including separate GPT-6.1 Sol review contexts. Full historical model assignments are unavailable."
+      },
+      {
+        "method": "agent",
+        "tool_setup": "OpenAI Codex, GPT-6, November 2026. Extraction, Lean port, independent Challenge packaging, metadata and verification."
+      }
+    ]
+  },
+  "review": {
+    "status": "self-assessed",
+    "notes": "The historical kernel receipts and agent reviews in PRs #1808 and #1031 cover their corresponding upstream arguments. The new port has no documented independent human review. See docs/PROVENANCE.md."
+  }
+}

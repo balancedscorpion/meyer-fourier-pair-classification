@@ -1,0 +1,196 @@
+{
+  "version": "v0.4",
+  "project": {
+    "name": "Finite-comb and finite-hole classification for relatively separated carriers",
+    "description": "Let Λ be a locally finite subset of the real line with a uniform bound on the number of points in each integer unit cell. The whole complex Meyer space of tempered distributions T with value-only atomic physical and Fourier records on Λ has finite dimension. Its dimension equals the attained maximum of nullities over finite unions L of translated positive-step full lattices for which L ∖ Λ is finite. For each L, the original physical and Fourier coefficients must both vanish at every missing site. In finite lattice residue coordinates, subtracting the joint rank of these rows from the sum of the cyclotomic block nullities gives the envelope nullity. One such envelope realizes the whole space. With separate relatively separated carriers both members of the Fourier pair are finite sums of translated and modulated lattice Dirac combs. The separately stated one-record H6 theorem only bounds the physical carrier. The active spectral module is finitely generated, and a single nonzero exponential polynomial with frequencies in that module annihilates every member of the fixed-carrier space.",
+    "authors": [
+      "Jamie Martin"
+    ],
+    "responsible_maintainers": [
+      "Jamie Martin"
+    ],
+    "license": "MIT"
+  },
+  "classification": {
+    "arxiv": [
+      "math.CA",
+      "math.FA"
+    ],
+    "msc2020": [
+      "42A38",
+      "46F12"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Finite-comb and finite-hole classification for relatively separated carriers",
+      "authors": [
+        "Jamie Martin"
+      ],
+      "type": "other",
+      "id": "https://github.com/ls558/MeyerGeneralProblem/pull/1808",
+      "relationship": "formalizes",
+      "author_endorsement": "participated",
+      "note": "Pinned MeyerGeneralProblem argument. Detailed authorship, prior inputs and agent review are recorded in docs/PROVENANCE.md."
+    }
+  ],
+  "related_formalizations": [
+    {
+      "id": "https://github.com/ls558/MeyerGeneralProblem/tree/43a4a33069b48d7f303113a3a2ffab25c15f4c8f",
+      "relationship": "adapts",
+      "note": "Ports the proof closure from the reviewed merge. All substantive Lean proofs are included in this repository."
+    }
+  ],
+  "status": {
+    "scope": "Let Λ be a locally finite subset of the real line with a uniform bound on the number of points in each integer unit cell. The whole complex Meyer space of tempered distributions T with value-only atomic physical and Fourier records on Λ has finite dimension. Its dimension equals the attained maximum of nullities over finite unions L of translated positive-step full lattices for which L ∖ Λ is finite. For each L, the original physical and Fourier coefficients must both vanish at every missing site. In finite lattice residue coordinates, subtracting the joint rank of these rows from the sum of the cyclotomic block nullities gives the envelope nullity. One such envelope realizes the whole space. With separate relatively separated carriers both members of the Fourier pair are finite sums of translated and modulated lattice Dirac combs. The separately stated one-record H6 theorem only bounds the physical carrier. The active spectral module is finitely generated, and a single nonzero exponential polynomial with frequencies in that module annihilates every member of the fixed-carrier space.",
+    "sorry_count": 0,
+    "sorry_in_definitions": 0,
+    "axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "main_results": [
+      {
+        "declaration": "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.boundedCount_commonSpace_holeClassification",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteDimensional_distributionalMeyerPairSpace_of_unitCellBound",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.exists_latticeOrbitResidueRows_cyclotomic_finrank",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.FiniteHoleEnvelope.exists_latticeResidueMatrixCoordinates",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_two_unitCellBounds",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.spectralModule_fg_and_exists_common_finiteExponentialAnnihilator_of_unitCellBound",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.mem_affineLatticeUnionCarrier",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      }
+    ],
+    "notes": "The counts refer to Solution. Intentional Challenge holes are named in Comparator. The permitted axiom set bounds dependencies. Use the mechanical report for a check of the exact revision."
+  },
+  "fidelity": {
+    "divergences": "The compared research declarations retain the original theorem names and types. Supporting comparison theorems specify the meanings of named Challenge definition holes on all arguments used by the public claims."
+  },
+  "automation": {
+    "methods": [
+      {
+        "method": "agent",
+        "tool_setup": "AI systems in the upstream Meyer research and Lean development, including separate GPT-6.1 Sol review contexts. Full historical model assignments are unavailable."
+      },
+      {
+        "method": "agent",
+        "tool_setup": "OpenAI Codex, GPT-6, November 2026. Extraction, Lean port, independent Challenge packaging, metadata and verification."
+      }
+    ]
+  },
+  "review": {
+    "status": "self-assessed",
+    "notes": "The historical kernel receipts and agent reviews in PRs #1808 and #1031 cover their corresponding upstream arguments. The new port has no documented independent human review. See docs/PROVENANCE.md."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "challenge_module": "WholeSpace.Challenge",
+  "solution_module": "WholeSpace.Solution",
+  "theorem_names": [
+    "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
+    "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
+    "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
+    "MeyerGeneralProblem.boundedCount_commonSpace_holeClassification",
+    "MeyerGeneralProblem.finiteDimensional_distributionalMeyerPairSpace_of_unitCellBound",
+    "MeyerGeneralProblem.exists_latticeOrbitResidueRows_cyclotomic_finrank",
+    "MeyerGeneralProblem.FiniteHoleEnvelope.exists_latticeResidueMatrixCoordinates",
+    "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_two_unitCellBounds",
+    "MeyerGeneralProblem.spectralModule_fg_and_exists_common_finiteExponentialAnnihilator_of_unitCellBound",
+    "MeyerGeneralProblem.mem_affineLatticeUnionCarrier"
+  ],
+  "definition_names": [
+    "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz",
+    "MeyerGeneralProblem.modulatedAffineDiracComb",
+    "MeyerGeneralProblem.finiteExponentialMultiplication",
+    "MeyerGeneralProblem.affineLatticeUnionCarrier"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

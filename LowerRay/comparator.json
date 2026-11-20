@@ -1,0 +1,22 @@
+{
+  "challenge_module": "LowerRay.Challenge",
+  "solution_module": "LowerRay.Solution",
+  "theorem_names": [
+    "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
+    "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
+    "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
+    "MeyerGeneralProblem.exists_finiteExponentialAnnihilator_of_finite_lower_ray_count",
+    "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_finite_lower_ray_count",
+    "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_fourier_finite_lower_ray_count"
+  ],
+  "definition_names": [
+    "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz",
+    "MeyerGeneralProblem.modulatedAffineDiracComb",
+    "MeyerGeneralProblem.finiteExponentialMultiplication"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
