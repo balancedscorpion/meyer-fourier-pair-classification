@@ -30,10 +30,10 @@ namespace BoundedClusterOrder
 variable (S : LocallyFiniteCarrier) {d : ℝ} {q : ℕ}
   (ho : BoundedClusterOrder S.signedSquareImage d q)
 
-private def graphPointBoundConstant : ℝ :=
+def graphPointBoundConstant : ℝ :=
   4 * ‖memLp_inverse_one_add_abs.toLp‖
 
-private def canonicalForwardNorm
+def canonicalForwardNorm
     (C : CanonicalClusterIndex S.signedSquareImage d) : ℝ :=
   ‖(ho.canonicalValuesEquiv C).toContinuousLinearEquiv.toContinuousLinearMap‖
 

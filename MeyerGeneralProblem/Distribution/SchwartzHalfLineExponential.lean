@@ -22,7 +22,7 @@ noncomputable section
 open Filter Set
 open scoped ContDiff Topology
 
-private def halfLineExponentialProfile (b : ℝ) (w : ℂ) (x : ℝ) : ℂ :=
+def halfLineExponentialProfile (b : ℝ) (w : ℂ) (x : ℝ) : ℂ :=
   (Real.smoothTransition (x - b + 1) : ℂ) * Complex.exp (w * (x : ℂ))
 
 private theorem iteratedDeriv_cexp_mul_real (w : ℂ) (n : ℕ) (x : ℝ) :

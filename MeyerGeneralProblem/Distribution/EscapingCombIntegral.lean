@@ -45,7 +45,7 @@ private theorem tsum_quadrant_firstRow (g : ℕ × ℕ → ℂ) (hg : Summable g
     (∑' p, g p) = (∑' n, g (n, 0)) + (∑' p : ℕ × ℕ, g (p.1, p.2 + 1)) :=
   tsum_split_equiv quadrantFirstRowEquiv g hg
 
-private def affinePhaseQuadrant (y d a b : ℝ) (hd : |d| = 1) (ha : 0 < a) (hb : 0 < b)
+def affinePhaseQuadrant (y d a b : ℝ) (hd : |d| = 1) (ha : 0 < a) (hb : 0 < b)
     (u : ℕ → ℂ) (M : ℝ) (hM : 0 ≤ M) (hu : ∀ n, ‖u n‖ ≤ M)
     (ω : ℂ) (hω : ‖ω‖ = 1) : TemperedDistribution ℝ ℂ :=
   combDistributionTranslation y
@@ -79,7 +79,7 @@ private theorem affinePhaseQuadrant_atomicOnCarrier (y d a b : ℝ)
   atomicOnCarrier_combDistributionTranslation _ _
     (weightedQuadrant_atomicOnCarrier d a b hd ha hb _ M hM _) y
 
-private theorem phase_norm_inv (ω : ℂ) (hω : ‖ω‖ = 1) : ‖ω⁻¹‖ = 1 := by rw [norm_inv, hω, inv_one]
+theorem phase_norm_inv (ω : ℂ) (hω : ‖ω‖ = 1) : ‖ω⁻¹‖ = 1 := by rw [norm_inv, hω, inv_one]
 
 private theorem forwardQuadrant_boundary (y a w : ℝ) (ha : 0 < a) (hw : 0 < w)
     (u : ℕ → ℂ) (M : ℝ) (hM : 0 ≤ M) (hu : ∀ n, ‖u n‖ ≤ M)
@@ -134,7 +134,7 @@ private theorem backwardQuadrant_boundary (y a w : ℝ) (ha : 0 < a) (hw : 0 < w
 def AffineCombTerm.weight (q : AffineCombTerm) (a : ℝ) (k : ℤ) : ℂ :=
   q.coefficient * combModulationCharacter q.frequency (q.origin + (k : ℝ) * a)
 
-private theorem norm_affineCombTerm_weight (q : AffineCombTerm) (a : ℝ) (k : ℤ) :
+theorem norm_affineCombTerm_weight (q : AffineCombTerm) (a : ℝ) (k : ℤ) :
     ‖q.weight a k‖ = ‖q.coefficient‖ := by
   simp only [AffineCombTerm.weight, norm_mul, norm_combModulationCharacter, mul_one]
 
@@ -165,12 +165,12 @@ private theorem affineCombTerm_split_action (q : AffineCombTerm) (a : ℝ) (ha :
     congr 2
     ring
 
-private def escapingCombForward (q : AffineCombTerm) (a w : ℝ) (ha : 0 < a) (hw : 0 < w)
+def escapingCombForward (q : AffineCombTerm) (a w : ℝ) (ha : 0 < a) (hw : 0 < w)
     (ω : ℂ) (hω : ‖ω‖ = 1) : TemperedDistribution ℝ ℂ :=
   affinePhaseQuadrant q.origin 1 a w abs_one ha hw (fun n => q.weight a (Int.ofNat n))
     ‖q.coefficient‖ (norm_nonneg _) (fun _ => (norm_affineCombTerm_weight q a _).le) ω⁻¹ (phase_norm_inv ω hω)
 
-private def escapingCombBackward (q : AffineCombTerm) (a w : ℝ) (ha : 0 < a) (hw : 0 < w)
+def escapingCombBackward (q : AffineCombTerm) (a w : ℝ) (ha : 0 < a) (hw : 0 < w)
     (ω : ℂ) (hω : ‖ω‖ = 1) : TemperedDistribution ℝ ℂ :=
   affinePhaseQuadrant (q.origin - a - w) (-1) a w (by norm_num) ha hw
     (fun n => q.weight a (Int.negSucc n)) ‖q.coefficient‖ (norm_nonneg _)

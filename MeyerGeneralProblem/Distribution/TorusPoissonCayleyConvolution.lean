@@ -24,23 +24,23 @@ section Multiplication
 
 variable {Θ : Type*} [MeasurableSpace Θ] {μ : Measure Θ}
 
-private theorem memLp_mul_of_norm_eq_one {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
+theorem memLp_mul_of_norm_eq_one {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
     (hUnit : ∀ᵐ θ ∂μ, ‖u θ‖ = 1) (f : Lp ℂ 2 μ) :
     MemLp (fun θ => u θ * f θ) 2 μ :=
   (Lp.memLp f).congr_norm (hMeas.mul (Lp.aestronglyMeasurable f)) (by
     filter_upwards [hUnit] with θ hθ
     rw [norm_mul, hθ, one_mul])
 
-private def unitModulusMul {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
+def unitModulusMul {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
     (hUnit : ∀ᵐ θ ∂μ, ‖u θ‖ = 1) (f : Lp ℂ 2 μ) : Lp ℂ 2 μ :=
   (memLp_mul_of_norm_eq_one hMeas hUnit f).toLp _
 
-private theorem coeFn_unitModulusMul {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
+theorem coeFn_unitModulusMul {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
     (hUnit : ∀ᵐ θ ∂μ, ‖u θ‖ = 1) (f : Lp ℂ 2 μ) :
     unitModulusMul hMeas hUnit f =ᵐ[μ] fun θ => u θ * f θ :=
   MemLp.coeFn_toLp _
 
-private theorem unitModulusMul_comp_eq {u v : Θ → ℂ}
+theorem unitModulusMul_comp_eq {u v : Θ → ℂ}
     (hu : AEStronglyMeasurable u μ) (hU : ∀ᵐ θ ∂μ, ‖u θ‖ = 1)
     (hv : AEStronglyMeasurable v μ) (hV : ∀ᵐ θ ∂μ, ‖v θ‖ = 1)
     (h : ∀ᵐ θ ∂μ, u θ * v θ = 1) (f : Lp ℂ 2 μ) :
@@ -50,7 +50,7 @@ private theorem unitModulusMul_comp_eq {u v : Θ → ℂ}
     with θ h1 h2 h3
   rw [h1, h2, ← mul_assoc, h3, one_mul]
 
-private def unitModulusMultiplier {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
+def unitModulusMultiplier {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
     (hUnit : ∀ᵐ θ ∂μ, ‖u θ‖ = 1) : Lp ℂ 2 μ ≃ₗᵢ[ℂ] Lp ℂ 2 μ := by
   have hConj := Complex.continuous_conj.comp_aestronglyMeasurable hMeas
   have hConjUnit : ∀ᵐ θ ∂μ, ‖conj (u θ)‖ = 1 := by

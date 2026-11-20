@@ -21,7 +21,7 @@ noncomputable section
 open Asymptotics Filter Set
 open scoped Topology
 
-private def dampingScalar (a t : ℝ) := Real.exp (-a * t)
+def dampingScalar (a t : ℝ) := Real.exp (-a * t)
 
 private def dampingDerivative (a t : ℝ) := -a * dampingScalar a t
 

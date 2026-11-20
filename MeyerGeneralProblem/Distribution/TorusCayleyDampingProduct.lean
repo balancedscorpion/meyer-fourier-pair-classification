@@ -26,17 +26,17 @@ variable {Θ : Type*} [MeasurableSpace Θ] {μ : Measure Θ}
 variable {u : Θ → ℂ} (hu : AEStronglyMeasurable u μ) (hBound : ∀ᵐ θ ∂μ, ‖u θ‖ ≤ 1)
 
 include hu hBound in
-private theorem memLp_bounded_mul (f : Lp ℂ 2 μ) :
+theorem memLp_bounded_mul (f : Lp ℂ 2 μ) :
     MemLp (fun θ => u θ * f θ) 2 μ :=
   (Lp.memLp f).mono (hu.mul (Lp.aestronglyMeasurable f)) (by
     filter_upwards [hBound] with θ hθ
     rw [norm_mul]
     exact mul_le_of_le_one_left (norm_nonneg _) hθ)
 
-private def l2BoundedMul (f : Lp ℂ 2 μ) : Lp ℂ 2 μ :=
+def l2BoundedMul (f : Lp ℂ 2 μ) : Lp ℂ 2 μ :=
   (memLp_bounded_mul hu hBound f).toLp _
 
-private theorem coeFn_l2BoundedMul (f : Lp ℂ 2 μ) :
+theorem coeFn_l2BoundedMul (f : Lp ℂ 2 μ) :
     l2BoundedMul hu hBound f =ᵐ[μ] fun θ => u θ * f θ := MemLp.coeFn_toLp _
 
 /-- Multiplication by a measurable function bounded by one is a contraction on (L^2). -/

@@ -384,7 +384,7 @@ theorem norm_upperHalfPlaneBlaschkeProduct_le_one {ι : Type*} {w : ι → ℂ}
   refine le_of_tendsto (continuous_norm.continuousAt.tendsto.comp hProd) (Eventually.of_forall fun s => ?_)
   change ‖∏ i ∈ s, upperHalfPlaneNormalizedBlaschkeFactor (w i) z‖ ≤ 1
   rw [Complex.norm_prod]
-  exact Finset.prod_le_one (fun _ _ => norm_nonneg _) (fun i _ =>
+  exact Finset.prod_le_one₀ (fun _ _ => norm_nonneg _) (fun i _ =>
     norm_upperHalfPlaneNormalizedBlaschkeFactor_le_one (hw i) hz)
 
 /-- The actual real boundary of the holomorphic product has the

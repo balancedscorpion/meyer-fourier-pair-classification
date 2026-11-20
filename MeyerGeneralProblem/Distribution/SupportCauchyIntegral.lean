@@ -360,7 +360,7 @@ private theorem memLp_integral_discreteSupportCount_of_bound
   exact (norm_integral_le_of_norm_le ((hP θ).const_mul B) (ae_of_all _ hDom)).trans
     (by rw [integral_const_mul]; exact mul_le_mul_of_nonneg_left (hM θ) hB)
 
-private theorem memLp_integral_supportCauchyKernel (ν : Measure Θ) [IsFiniteMeasure ν]
+theorem memLp_integral_supportCauchyKernel (ν : Measure Θ) [IsFiniteMeasure ν]
     (z : ℂ) (hz : z.im ≠ 0) :
     MemLp (fun θ => ∫ x, supportCauchyKernel z x ∂discreteSupportCount (T θ)) 2 ν :=
   memLp_integral_discreteSupportCount_of_bound S T hT hCont hCount ν (measurable_supportCauchyKernel z)

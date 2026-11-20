@@ -108,10 +108,9 @@ private theorem integral_norm_le_torusL2_norm {F : UnitAddTorus d → ℂ} (f : 
     (hRep : F =ᵐ[volume] f) : (∫ θ, ‖F θ‖) ≤ ‖f‖ := by
   have hMem := (memLp_congr_ae hRep).mpr (Lp.memLp f)
   rw [← lpNorm_one_eq_integral_norm hMem.aestronglyMeasurable, Lp.norm_def, lpNorm,
-    ite_eq_left hMem.aestronglyMeasurable, eLpNorm_congr_ae hRep]
-  exact ENNReal.toReal_mono (Lp.memLp f).2.ne
-    (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num : (1 : ℝ≥0∞) ≤ 2)
-      (Lp.aestronglyMeasurable f))
+    eLpNorm_congr_ae hRep]
+  exact ENNReal.toReal_mono (Lp.memLp f).ne
+    (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num : (1 : ℝ≥0∞) ≤ 2))
 
 /-- The average fixes a torus L² input if the time kernel has multiplier
 one at every frequency carrying a nonzero coefficient. -/

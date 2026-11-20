@@ -264,10 +264,10 @@ theorem exists_eventually_weighted_abs_log_tail_lt_heatFourierLaplace
     rw [← add_div, abs_log_eq_log_max_one_add_posLog_inv (norm_nonneg _)]
   have hUDom : (∫ x in T, U x) ≤ ∫ x in {x : ℝ | (N : ℝ) ≤ |x|}, U x :=
     setIntegral_mono_set hUInt.integrableOn (ae_of_all _ hU₀)
-      (ae_of_all _ fun _ hx => (le_max_left _ _).trans hx)
+      (ae_of_all _ fun x (hx : S ≤ |x|) => show (N : ℝ) ≤ |x| from (le_max_left _ _).trans hx)
   have hVDom : (∫ x in T, V x) ≤ ∫ x in {x : ℝ | R ≤ |x|}, V x :=
     setIntegral_mono_set hVInt.integrableOn (ae_of_all _ hV₀)
-      (ae_of_all _ fun _ hx => (le_max_right _ _).trans hx)
+      (ae_of_all _ fun x (hx : S ≤ |x|) => show R ≤ |x| from (le_max_right _ _).trans hx)
   refine ⟨?_, ?_⟩
   · rw [funext hEq]
     exact (show Integrable U from hUInt).add (show Integrable V from hVInt)

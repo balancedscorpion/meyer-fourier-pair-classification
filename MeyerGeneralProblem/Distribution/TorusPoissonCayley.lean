@@ -275,14 +275,14 @@ theorem aemeasurable_torusPoissonCayleyBoundary
     (fun y => aemeasurable_torusPoissonCayleyField β S T hT hCont hCount hAdvance ((y : ℂ) * Complex.I))
     ((ae_tendsto_torusPoissonCayleyField β S T hT hCont hCount hAdvance).mono fun _ h => h.2)
 
-private theorem memLp_torusPoissonCayleyField
+theorem memLp_torusPoissonCayleyField
     (hAdvance : ∀ t θ, T (unitAddTorusFlow β t θ) = combDistributionTranslation (-t) (T θ))
     (z : ℂ) :
     MemLp (torusPoissonCayleyField β S T hT hCont hCount z) 2 volume :=
   MemLp.of_bound (aemeasurable_torusPoissonCayleyField β S T hT hCont hCount hAdvance z).aestronglyMeasurable
     1 ((ae_analyticOnNhd_norm_torusPoissonCayleyField β S T hT hCont hCount hAdvance).mono fun _ h => h.2 z)
 
-private theorem memLp_torusPoissonCayleyBoundary
+theorem memLp_torusPoissonCayleyBoundary
     (hAdvance : ∀ t θ, T (unitAddTorusFlow β t θ) = combDistributionTranslation (-t) (T θ)) :
     MemLp (torusPoissonCayleyBoundary β S T hT hCont hCount) 2 volume :=
   MemLp.of_bound (aemeasurable_torusPoissonCayleyBoundary β S T hT hCont hCount hAdvance).aestronglyMeasurable

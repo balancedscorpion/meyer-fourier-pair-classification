@@ -218,13 +218,13 @@ theorem canonicalToActualTraceLower_pos (m : ℕ) :
     0 < canonicalToActualTraceLower m :=
   Real.sqrt_pos.2 (hermiteDiagonalFloorConstant_pos m)
 
-private def canonicalToActualTraceCoordinateCLM
+def canonicalToActualTraceCoordinateCLM
     (m : ℕ) (hm : 1 ≤ m) (i : ho.signedGrouping.Index) : ℂ →L[ℂ] ℂ :=
   ContinuousLinearMap.smulRight (1 : ℂ →L[ℂ] ℂ)
     (ho.canonicalToActualTraceFactor S m (2 * m) hm
       (ho.canonicalActualAnchor S) i.1 : ℂ)
 
-private def canonicalToActualTraceForward
+def canonicalToActualTraceForward
     (m : ℕ) (hm : 1 ≤ m) :
     CoefficientSpace ho.signedGrouping.Index →L[ℂ]
       CoefficientSpace ho.signedGrouping.Index :=
@@ -236,7 +236,7 @@ private def canonicalToActualTraceForward
         abs_of_pos (ho.canonicalToActualTraceFactor_pos S m hm i.1)]
       exact ho.canonicalToActualTraceFactor_le_upper S m hm i.1)
 
-private def canonicalToActualTraceInverse
+def canonicalToActualTraceInverse
     (m : ℕ) (hm : 1 ≤ m) :
     CoefficientSpace ho.signedGrouping.Index →L[ℂ]
       CoefficientSpace ho.signedGrouping.Index :=
@@ -253,7 +253,7 @@ private def canonicalToActualTraceInverse
         (canonicalToActualTraceLower_pos m)).2
           (ho.canonicalToActualTraceLower_le_factor S m hm i.1))
 
-@[simp] private theorem canonicalToActualTraceForward_apply
+@[simp] theorem canonicalToActualTraceForward_apply
     (m : ℕ) (hm : 1 ≤ m)
     (c : CoefficientSpace ho.signedGrouping.Index)
     (i : ho.signedGrouping.Index) :
@@ -264,7 +264,7 @@ private def canonicalToActualTraceInverse
     (ho.canonicalActualAnchor S) i.1 : ℂ) = _
   ring
 
-@[simp] private theorem canonicalToActualTraceInverse_apply
+@[simp] theorem canonicalToActualTraceInverse_apply
     (m : ℕ) (hm : 1 ≤ m)
     (c : CoefficientSpace ho.signedGrouping.Index)
     (i : ho.signedGrouping.Index) :

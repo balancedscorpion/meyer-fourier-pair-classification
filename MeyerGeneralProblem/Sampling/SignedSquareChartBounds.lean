@@ -78,7 +78,7 @@ on either ray, without mixed regularity. -/
 private theorem integral_deriv_ray_le (k : ℕ) {f : ℝ → ℂ}
     (hf : ContDiff ℝ ∞ f) (hF : MemLp f 2) (hD : MemLp (iteratedDeriv k f) 2)
     {ε : ℝ} (hε : ε^2 = 1) (j : ℕ) (hj : j ≤ k) :
-    (∫ x : ℝ, ‖iteratedDeriv j f (ε*x)‖^2) ≤ ‖hF.toLp‖^2 + ‖hD.toLp‖^2 := by
+    (∫ x : ℝ, ‖iteratedDeriv j f (ε*x)‖^2) ≤ ‖(MemLp.toLp (p := 2) _ hF)‖^2 + ‖(MemLp.toLp (p := 2) _ hD)‖^2 := by
   obtain ⟨hJ, hnJ⟩ := PureDerivativeEnergy.exists_lower_derivative_norm_sq_le k hf hF hD j hj
   rw [integral_norm_ray _ hε, integral_norm_sq_eq_toLp_norm_sq_complex hJ]
   exact hnJ
@@ -88,28 +88,28 @@ private theorem integral_jet_sum_le (k : ℕ) {f : ℝ → ℂ}
     (hf : ContDiff ℝ ∞ f) (hF : MemLp f 2) (hD : MemLp (iteratedDeriv k f) 2)
     {ε : ℝ} (hε : ε^2 = 1) :
     (∫ x : ℝ, ∑ j ∈ Finset.range k, ‖iteratedDeriv j f (ε*x)‖^2) ≤
-      (k : ℝ) * (‖hF.toLp‖^2 + ‖hD.toLp‖^2) := by
+      (k : ℝ) * (‖(MemLp.toLp (p := 2) _ hF)‖^2 + ‖(MemLp.toLp (p := 2) _ hD)‖^2) := by
   have ht := memLp_iteratedDeriv_of_top_classical_derivative k hf hF hD
   rw [integral_finsetSum (Finset.range k) (fun j hj =>
     integrable_norm_ray (ht j (by have := Finset.mem_range.mp hj; omega)) hε)]
   calc
-    _ ≤ ∑ j ∈ Finset.range k, (‖hF.toLp‖^2 + ‖hD.toLp‖^2) :=
+    _ ≤ ∑ j ∈ Finset.range k, (‖(MemLp.toLp (p := 2) _ hF)‖^2 + ‖(MemLp.toLp (p := 2) _ hD)‖^2) :=
       Finset.sum_le_sum (fun j hj =>
         integral_deriv_ray_le k hf hF hD hε j (by have := Finset.mem_range.mp hj; omega))
     _ = _ := by simp [mul_add]
 
-set_option maxHeartbeats 800000 in
+set_option maxHeartbeats 2400000
 /-- Every smooth cutoff-chart derivative through its graph order is bounded
 by only the zeroth and two pure endpoint energies. The positive constant is
 fixed before the sign, input and lower derivative index; the radius is fixed. -/
 theorem exists_smooth_chart_bound (k : ℕ) {R : ℝ} (hR : 2 ≤ R) :
-    ∃ C > 0, ∀ (ε : ℝ), ε^2 = 1 → ∀ (f : ℝ → ℂ),
+    ∃ C : ℝ, 0 < C ∧ ∀ (ε : ℝ), ε^2 = 1 → ∀ (f : ℝ → ℂ),
       ∀ (hf : ContDiff ℝ ∞ f) (hF : MemLp f 2)
         (hD : MemLp (iteratedDeriv k f) 2),
       Integrable (fun x : ℝ => x^(2*k) * ‖f x‖^2) →
       ∀ j ≤ k, ∃ hJ : MemLp (iteratedDeriv j (signedSquareCutoffChart k R ε f)) 2,
-        ‖hJ.toLp‖^2 ≤ C *
-          (‖hF.toLp‖^2 + (∫ x : ℝ, x^(2*k) * ‖f x‖^2) + ‖hD.toLp‖^2) := by
+        ‖(MemLp.toLp (p := 2) _ hJ)‖^2 ≤ C *
+          (‖(MemLp.toLp (p := 2) _ hF)‖^2 + (∫ x : ℝ, x^(2*k) * ‖f x‖^2) + ‖(MemLp.toLp (p := 2) _ hD)‖^2) := by
   obtain ⟨Cs, hCs, htop⟩ := exists_integral_signedSquareCutoffChart_deriv_le k
     (by norm_num : (0 : ℝ) < 1) hR
   let a : ℝ := (1+1) / (4 : ℝ)^k
@@ -123,7 +123,7 @@ theorem exists_smooth_chart_bound (k : ℕ) {R : ℝ} (hR : 2 ≤ R) :
   have hA : 0 ≤ A := by dsimp [A]; positivity
   refine ⟨2+2*A, by positivity, ?_⟩
   intro ε hε f hf hF hD hW
-  let E : ℝ := ‖hF.toLp‖^2 + ‖hD.toLp‖^2
+  let E : ℝ := ‖(MemLp.toLp (p := 2) _ hF)‖^2 + ‖(MemLp.toLp (p := 2) _ hD)‖^2
   let W : ℝ := ∫ x : ℝ, x^(2*k)*‖f x‖^2
   have hE : 0 ≤ E := by dsimp [E]; positivity
   have hW0 : 0 ≤ W := by
@@ -177,8 +177,8 @@ theorem exists_smooth_chart_bound (k : ℕ) {R : ℝ} (hR : 2 ≤ R) :
     (contDiff_signedSquareCutoffChart k (by linarith) ε hf) hG (hGD k le_rfl) j hj
   refine ⟨hLj, ?_⟩
   have hAW : 0 ≤ A*W := mul_nonneg hA hW0
-  change _ ≤ (2+2*A) * (‖hF.toLp‖^2 + W + ‖hD.toLp‖^2)
-  have heq : ‖hF.toLp‖^2 + W + ‖hD.toLp‖^2 = E+W := by dsimp [E]; ring
+  change _ ≤ (2+2*A) * (‖(MemLp.toLp (p := 2) _ hF)‖^2 + W + ‖(MemLp.toLp (p := 2) _ hD)‖^2)
+  have heq : ‖(MemLp.toLp (p := 2) _ hF)‖^2 + W + ‖(MemLp.toLp (p := 2) _ hD)‖^2 = E+W := by dsimp [E]; ring
   rw [heq]
   nlinarith
 
@@ -195,7 +195,7 @@ open scoped ContDiff
 theorem power_integral_norm (k : ℕ) {f : ℝ → ℂ}
     (hW : MemLp (fun x : ℝ => (x : ℂ)^k * f x) 2) :
     Integrable (fun x : ℝ => x^(2*k)*‖f x‖^2) ∧
-      (∫ x : ℝ, x^(2*k)*‖f x‖^2) = ‖hW.toLp‖^2 := by
+      (∫ x : ℝ, x^(2*k)*‖f x‖^2) = ‖(MemLp.toLp (p := 2) _ hW)‖^2 := by
   have he (x : ℝ) : x^(2*k)*‖f x‖^2 = ‖(x : ℂ)^k * f x‖^2 := by
     rw [norm_mul, norm_pow, Complex.norm_real, Real.norm_eq_abs, mul_pow,
       ← pow_mul, Nat.mul_comm k 2, (even_two_mul k).pow_abs]
@@ -209,22 +209,22 @@ with the Fourier normalization retained in the order-dependent constant. -/
 theorem energy_le_graph (k : ℕ) {f : ℝ → ℂ} (hf : ContDiff ℝ ∞ f)
     (hF : MemLp f 2) (hW : MemLp (fun x : ℝ => (x : ℂ)^k*f x) 2)
     (hD : MemLp (iteratedDeriv k f) 2) :
-    ‖hF.toLp‖^2 + ‖hW.toLp‖^2 + ‖hD.toLp‖^2 ≤
-      (1 + ((2*Real.pi)^k)^2) * ‖KNSGraphSpace.ofSmooth k hf hF hW hD‖^2 := by
+    ‖(MemLp.toLp (p := 2) _ hF)‖^2 + ‖(MemLp.toLp (p := 2) _ hW)‖^2 + ‖(MemLp.toLp (p := 2) _ hD)‖^2 ≤
+      (1 + ((2*Real.pi)^k)^2) * ‖KNSGraphSpace.ofSmooth k (f := f) hf hF hW hD‖^2 := by
   let p : ℝ := (2*Real.pi)^k
   have hp : p ≠ 0 := by dsimp [p]; positivity
   have hN := KNSGraphSpace.norm_ofSmooth_sq k hf hF hW hD
-  have hlow : ‖hF.toLp‖^2 + ‖hW.toLp‖^2 ≤
-      ‖KNSGraphSpace.ofSmooth k hf hF hW hD‖^2 := by
+  have hlow : ‖(MemLp.toLp (p := 2) _ hF)‖^2 + ‖(MemLp.toLp (p := 2) _ hW)‖^2 ≤
+      ‖KNSGraphSpace.ofSmooth k (f := f) hf hF hW hD‖^2 := by
     rw [hN]
-    nlinarith [sq_nonneg ‖hF.toLp‖, sq_nonneg (p⁻¹*‖hD.toLp‖)]
-  have htop : (p⁻¹*‖hD.toLp‖)^2 ≤ ‖KNSGraphSpace.ofSmooth k hf hF hW hD‖^2 := by
+    nlinarith [sq_nonneg ‖(MemLp.toLp (p := 2) _ hF)‖, sq_nonneg (p⁻¹*‖(MemLp.toLp (p := 2) _ hD)‖)]
+  have htop : (p⁻¹*‖(MemLp.toLp (p := 2) _ hD)‖)^2 ≤ ‖KNSGraphSpace.ofSmooth k (f := f) hf hF hW hD‖^2 := by
     rw [hN]
     dsimp [p]
-    nlinarith [sq_nonneg ‖hF.toLp‖, sq_nonneg ‖hW.toLp‖]
-  have htop' : ‖hD.toLp‖^2 ≤ p^2 * ‖KNSGraphSpace.ofSmooth k hf hF hW hD‖^2 := by
+    nlinarith [sq_nonneg ‖(MemLp.toLp (p := 2) _ hF)‖, sq_nonneg ‖(MemLp.toLp (p := 2) _ hW)‖]
+  have htop' : ‖(MemLp.toLp (p := 2) _ hD)‖^2 ≤ p^2 * ‖KNSGraphSpace.ofSmooth k (f := f) hf hF hW hD‖^2 := by
     calc
-      _ = p^2 * (p⁻¹*‖hD.toLp‖)^2 := by field_simp
+      _ = p^2 * (p⁻¹*‖(MemLp.toLp (p := 2) _ hD)‖)^2 := by field_simp
       _ ≤ _ := mul_le_mul_of_nonneg_left htop (sq_nonneg p)
   change _ ≤ (1+p^2) * _
   nlinarith
@@ -232,12 +232,12 @@ theorem energy_le_graph (k : ℕ) {f : ℝ → ℂ} (hf : ContDiff ℝ ∞ f)
 /-- A fixed positive bound for every actual smooth chart derivative through k
 in terms of its genuine same-order graph input. -/
 theorem exists_smooth_chart_graph_bound (k : ℕ) {R : ℝ} (hR : 2 ≤ R) :
-    ∃ C > 0, ∀ ε : ℝ, ε^2=1 → ∀ (f : ℝ → ℂ)
+    ∃ C : ℝ, 0 < C ∧ ∀ ε : ℝ, ε^2=1 → ∀ (f : ℝ → ℂ)
       (hf : ContDiff ℝ ∞ f) (hF : MemLp f 2)
       (hW : MemLp (fun x : ℝ => (x : ℂ)^k*f x) 2)
       (hD : MemLp (iteratedDeriv k f) 2),
       ∀ j ≤ k, ∃ hJ : MemLp (iteratedDeriv j (signedSquareCutoffChart k R ε f)) 2,
-        ‖hJ.toLp‖^2 ≤ C * ‖KNSGraphSpace.ofSmooth k hf hF hW hD‖^2 := by
+        ‖(MemLp.toLp (p := 2) _ hJ)‖^2 ≤ C * ‖KNSGraphSpace.ofSmooth k (f := f) hf hF hW hD‖^2 := by
   obtain ⟨C, hC, hc⟩ := SignedSquareSmoothBounds.exists_smooth_chart_bound k hR
   refine ⟨C * (1+((2*Real.pi)^k)^2), by positivity, ?_⟩
   intro ε hε f hf hF hW hD j hj

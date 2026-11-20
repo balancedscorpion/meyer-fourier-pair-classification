@@ -26,11 +26,11 @@ namespace BoundedClusterOrder
 variable {S : LocallyFiniteCarrier} {d : ℝ} {q : ℕ}
   (horder : BoundedClusterOrder S.signedSquareImage d q)
 
-private abbrev CanonicalScalarIndex :=
+abbrev CanonicalScalarIndex :=
   Σ C : CanonicalClusterIndex S.signedSquareImage d, Fin (horder.clusterSize C)
 
 /-- Flatten the exact canonical cluster blocks to their scalar sigma coordinates. -/
-private def canonicalGraphDataFlatten (y : horder.CanonicalGraphData) :
+def canonicalGraphDataFlatten (y : horder.CanonicalGraphData) :
     CoefficientSpace horder.CanonicalScalarIndex :=
   ⟨fun x => y x.1 x.2, by
     apply memℓp_gen
@@ -48,7 +48,7 @@ private def canonicalGraphDataFlatten (y : horder.CanonicalGraphData) :
     simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using hflat⟩
 
 /-- Reassemble scalar sigma coordinates into their original finite canonical blocks. -/
-private def canonicalGraphDataUnflatten
+def canonicalGraphDataUnflatten
     (x : CoefficientSpace horder.CanonicalScalarIndex) : horder.CanonicalGraphData :=
   ⟨fun C => WithLp.toLp 2 (fun i => x ⟨C, i⟩), by
     apply memℓp_gen
@@ -64,7 +64,7 @@ private def canonicalGraphDataUnflatten
       hsigma.2.congr fun C => by simp only [PiLp.norm_sq_eq_of_L2, tsum_fintype]
     simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using hblocks⟩
 
-private theorem canonicalGraphDataFlatten_norm
+theorem canonicalGraphDataFlatten_norm
     (y : horder.CanonicalGraphData) :
     ‖horder.canonicalGraphDataFlatten y‖ = ‖y‖ := by
   rw [← sq_eq_sq₀ (norm_nonneg _) (norm_nonneg _)]

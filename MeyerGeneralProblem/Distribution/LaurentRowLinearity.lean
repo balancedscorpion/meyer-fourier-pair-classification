@@ -15,14 +15,14 @@ open Set
 
 variable {G : Type*} [AddCommGroup G]
 
-private theorem FrequencyLocallyFinite.smul_complex {L : G →+ ℝ} {u : G → ℂ}
+theorem FrequencyLocallyFinite.smul_complex {L : G →+ ℝ} {u : G → ℂ}
     (hu : FrequencyLocallyFinite L u) (c : ℂ) : FrequencyLocallyFinite L (c • u) := by
   intro a b
   apply (hu a b).subset
   rintro n ⟨hn, hI⟩
   exact ⟨fun h => hn (by simp [h]), hI⟩
 
-private theorem FrequencyLocallyFinite.add_complex {L : G →+ ℝ} {u v : G → ℂ}
+theorem FrequencyLocallyFinite.add_complex {L : G →+ ℝ} {u v : G → ℂ}
     (hu : FrequencyLocallyFinite L u) (hv : FrequencyLocallyFinite L v) :
     FrequencyLocallyFinite L (u + v) := by
   intro a b
@@ -33,7 +33,7 @@ private theorem FrequencyLocallyFinite.add_complex {L : G →+ ℝ} {u v : G →
     exact ⟨fun h => hn (by simp [he, h]), hI⟩
   · exact Or.inl ⟨he, hI⟩
 
-private def cutArrayNumeratorLinearMap (L : G →+ ℝ) (p : AddMonoidAlgebra ℂ G) (s : ℝ) :
+def cutArrayNumeratorLinearMap (L : G →+ ℝ) (p : AddMonoidAlgebra ℂ G) (s : ℝ) :
     (G → ℂ) →ₗ[ℂ] (G → ℂ) := by
   let M : (G → ℂ) →ₗ[ℂ] (G → ℂ) := {
     toFun := arrayPositiveCut L s
@@ -43,7 +43,7 @@ private def cutArrayNumeratorLinearMap (L : G →+ ℝ) (p : AddMonoidAlgebra �
       by_cases h : s ≤ L n <;> simp [arrayPositiveCut, h] }
   exact (originalLaurentArrayAction p).comp M
 
-private theorem cutArrayNumeratorLinearMap_apply (L : G →+ ℝ)
+theorem cutArrayNumeratorLinearMap_apply (L : G →+ ℝ)
     (p : AddMonoidAlgebra ℂ G) (s : ℝ) (u : G → ℂ) :
     cutArrayNumeratorLinearMap L p s u = cutArrayNumerator L p.coeff s u := by
   funext n
@@ -105,13 +105,13 @@ theorem orderedLaurentJumpLinearMap_apply
     orderedLaurentJumpLinearMap L p lo hi hlo hhi hmin hmax s W hW R =
       orderedLaurentJump p R.val lo hi := rfl
 
-private def exponentialNumeratorLinearMap (L : G →+ ℝ) :
+def exponentialNumeratorLinearMap (L : G →+ ℝ) :
     AddMonoidAlgebra ℂ G →ₗ[ℂ] (ℂ → ℂ) :=
   (Finsupp.linearCombination ℂ (fun n z =>
     Complex.exp (2 * Real.pi * Complex.I * (L n : ℂ) * z))).comp
       (AddMonoidAlgebra.coeffLinearEquiv ℂ).toLinearMap
 
-private theorem exponentialNumeratorLinearMap_apply (L : G →+ ℝ)
+theorem exponentialNumeratorLinearMap_apply (L : G →+ ℝ)
     (R : AddMonoidAlgebra ℂ G) :
     exponentialNumeratorLinearMap L R = complexExponentialSum L R.coeff := by
   funext z

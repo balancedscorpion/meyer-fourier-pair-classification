@@ -176,7 +176,7 @@ variable (N k : ℕ) (hk : 2 ≤ k) {B : ℝ} (hB : 1 ≤ B) (hd : 0 < d) (hdiam
 
 include N k hk hB hd hdiam b₀ hpositive hnegative start hstart hstart₀
 
-private theorem canonicalGraphFunction_domain
+theorem canonicalGraphFunction_domain
     (anchor : (C : CanonicalClusterIndex S.signedSquareImage d) → Fin (ho.clusterSize C))
     (y : ho.CanonicalGraphData) :
     let f := S.canonicalGraphFunction ho k hd hB start anchor y

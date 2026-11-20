@@ -98,7 +98,7 @@ theorem norm_torusL2FourierMultiplier_apply_le {d : Type*} [Fintype d]
   exact (norm_lpDiagonalMul_apply_le m hC hm _).trans_eq
     (by rw [LinearIsometryEquiv.norm_map])
 
-private theorem norm_directionalHilbertMultiplier_le_one (b : ℝ) :
+theorem norm_directionalHilbertMultiplier_le_one (b : ℝ) :
     ‖-Complex.I * (Real.sign b : ℂ)‖ ≤ 1 := by
   rcases lt_trichotomy b 0 with hb | rfl | hb
   · simp [Real.sign_of_neg hb]
@@ -180,7 +180,7 @@ private theorem mFourierCoeff_pointwise_conj {d : Type*} [Fintype d]
 
 private theorem memLp_conj_torusL2 {d : Type*} [Fintype d] (f : TorusL2(d)) :
     MemLp (fun θ => conj (f θ)) 2 (volume : Measure (UnitAddTorus d)) :=
-  (Lp.memLp f).congr_norm (Complex.continuous_conj.comp_aestronglyMeasurable (Lp.memLp f).1)
+  (Lp.memLp f).congr_norm (Complex.continuous_conj.comp_aestronglyMeasurable (Lp.memLp f).aestronglyMeasurable)
     (ae_of_all _ fun θ => (Complex.norm_conj (f θ)).symm)
 
 private def torusL2Conj {d : Type*} [Fintype d] (f : TorusL2(d)) :
@@ -237,7 +237,7 @@ section SupportPoissonField
 
 open Adaptive ProbabilityTheory Set
 
-private theorem memLp_supportPoissonField_ofReal {d : Type*} [Fintype d]
+theorem memLp_supportPoissonField_ofReal {d : Type*} [Fintype d]
     (S : UnitAddTorus d → LocallyFiniteCarrier) (T : UnitAddTorus d → TemperedDistribution ℝ ℂ)
     (hT : ∀ θ, DistributionSupportedOn (S θ).carrier (T θ))
     (hCont : ∀ f : SchwartzMap ℝ ℂ, HasCompactSupport (f : ℝ → ℂ) →
@@ -251,7 +251,7 @@ private theorem memLp_supportPoissonField_ofReal {d : Type*} [Fintype d]
     · simp [hy, cauchyPDFReal_scale_zero]
     · exact (memLp_poisson_discreteSupportCount S T hT hCont hCount volume 0
         (pos_iff_ne_zero.mpr hy)).mono_exponent le_top
-  exact hReal.congr_norm (Complex.continuous_ofReal.comp_aestronglyMeasurable hReal.1)
+  exact hReal.congr_norm (Complex.continuous_ofReal.comp_aestronglyMeasurable hReal.aestronglyMeasurable)
     (ae_of_all _ fun _ => (Complex.norm_real _).symm)
 
 /-- The real Poisson field of the actual support count, represented

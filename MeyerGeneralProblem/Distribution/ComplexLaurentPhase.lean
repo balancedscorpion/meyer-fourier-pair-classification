@@ -24,7 +24,7 @@ open scoped FourierTransform Topology
 
 variable {G ι : Type*} [AddCommGroup G] [Fintype ι]
 
-private def complexPhaseExponent (b : Module.Basis ι ℤ G) (L : G →+ ℝ)
+def complexPhaseExponent (b : Module.Basis ι ℤ G) (L : G →+ ℝ)
     (m : G) (u : ι → ℂ) (z : ℂ) : ℂ :=
   (2 * Real.pi * Complex.I : ℂ) *
     ∑ i, (b.repr m i : ℂ) * (u i + (L (b i) : ℂ) * z)

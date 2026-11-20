@@ -383,9 +383,10 @@ theorem carrierGramOperator_isSelfAdjoint (m : ℕ) (hm : 1 ≤ m)
 /-- The genuine-minus-universal tail Gram difference is self-adjoint. -/
 theorem carrierGramDifference_isSelfAdjoint (m : ℕ) (hm : 1 ≤ m)
     (B : CarrierHermiteBesselAnalysis m hm Λ) :
-    IsSelfAdjoint (D.carrierGramDifference m hm B) :=
-  (D.carrierGramOperator_isSelfAdjoint m hm B).sub
-    (D.gramOperator_isSelfAdjoint m hm)
+    IsSelfAdjoint (D.carrierGramDifference m hm B) := by
+  apply ContinuousLinearMap.isSelfAdjoint_iff'.mpr
+  rw [carrierGramDifference, map_sub, (D.carrierGramOperator_isSelfAdjoint m hm B).adjoint_eq,
+    (D.gramOperator_isSelfAdjoint m hm).adjoint_eq]
 
 /-- Matrix entry left after deleting a finite two-sided coordinate block from
 the carrier Gram difference.  This is the exact scalar expression that the

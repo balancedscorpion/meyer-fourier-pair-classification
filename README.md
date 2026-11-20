@@ -25,8 +25,8 @@ Install the toolchain named in `lean-toolchain`. From the repository root run th
 ```sh
 lake exe cache get
 lake build
-lake comparator WholeSpace/comparator.json
-lake comparator LowerRay/comparator.json
+lake comparator --config WholeSpace/comparator.json
+lake comparator --config LowerRay/comparator.json
 ```
 
 Each entry uses the repository root as its Lake project. Select the matching Comparator and metadata paths above. The manual GitHub workflow runs Palomar’s full reusable preflight against a specified public commit. The present claims concern the stated carrier and counting hypotheses. The unrestricted Meyer problem remains open.
