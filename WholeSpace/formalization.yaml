@@ -52,67 +52,7 @@
     ],
     "main_results": [
       {
-        "declaration": "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
-        "file": "WholeSpace/Solution.lean",
-        "comparator_config": "WholeSpace/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
-        "declaration": "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
-        "file": "WholeSpace/Solution.lean",
-        "comparator_config": "WholeSpace/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
-        "declaration": "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
-        "file": "WholeSpace/Solution.lean",
-        "comparator_config": "WholeSpace/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
         "declaration": "MeyerGeneralProblem.boundedCount_commonSpace_holeClassification",
-        "file": "WholeSpace/Solution.lean",
-        "comparator_config": "WholeSpace/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
-        "declaration": "MeyerGeneralProblem.finiteDimensional_distributionalMeyerPairSpace_of_unitCellBound",
-        "file": "WholeSpace/Solution.lean",
-        "comparator_config": "WholeSpace/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
-        "declaration": "MeyerGeneralProblem.exists_latticeOrbitResidueRows_cyclotomic_finrank",
         "file": "WholeSpace/Solution.lean",
         "comparator_config": "WholeSpace/comparator.json",
         "sorry_count": 0,
@@ -149,6 +89,66 @@
       },
       {
         "declaration": "MeyerGeneralProblem.spectralModule_fg_and_exists_common_finiteExponentialAnnihilator_of_unitCellBound",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteDimensional_distributionalMeyerPairSpace_of_unitCellBound",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.exists_latticeOrbitResidueRows_cyclotomic_finrank",
         "file": "WholeSpace/Solution.lean",
         "comparator_config": "WholeSpace/comparator.json",
         "sorry_count": 0,

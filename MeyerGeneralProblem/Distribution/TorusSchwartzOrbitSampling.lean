@@ -229,8 +229,9 @@ private theorem eLpNorm_torusOrbitWeightedNorm_le {d : Type*} [Fintype d] (β : 
     change C * (C * _) = C ^ 2 * _
     rw [pow_two, mul_assoc]
   change eLpNorm B 2 volume ≤ C * eLpNorm F 2 volume
-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by norm_num),
-    eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by norm_num)]
+  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (f := B) (by norm_num) (by norm_num)
+    (measurable_torusOrbitWeightedNorm β hF).aestronglyMeasurable,
+    eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by norm_num) hF.aestronglyMeasurable]
   simp only [ENNReal.toReal_ofNat, ENNReal.rpow_two]
   simp_rw [Real.enorm_eq_ofReal (hB _), ← ofReal_norm, ← ENNReal.ofReal_pow (hB _) 2,
     ← ENNReal.ofReal_pow (norm_nonneg _) 2]
@@ -461,7 +462,6 @@ theorem memLp_torusSchwartzOrbitPairing_of_schwartzSeminorm_bound
       (fun _ => zero_le) (fun s => eLpNorm_torusOrbitWeightedNorm_le β (G s) (hG s) (hGLp s))
   have hQM : TendstoInMeasure volume Q atTop (fun _ => (0 : ℝ)) := by
     apply tendstoInMeasure_of_tendsto_eLpNorm (p := 2) (by norm_num)
-      (fun s => (hQ s).aestronglyMeasurable) aestronglyMeasurable_const
     simpa only [← Pi.zero_def, sub_zero] using hQLim
   obtain ⟨u, _, hq⟩ := hQM.exists_seq_tendsto_ae'
   have hErr (s : Finset (d → ℤ)) : ∀ᵐ θ ∂volume,
@@ -482,14 +482,14 @@ theorem memLp_torusSchwartzOrbitPairing_of_schwartzSeminorm_bound
   have hNorm : eLpNorm (S F) 2 volume ≤ (ENNReal.ofReal D * C) * eLpNorm F 2 volume := by
     calc
       _ ≤ eLpNorm ((D * A) • torusOrbitWeightedNorm β F) 2 volume :=
-        eLpNorm_mono_ae_real (hPointwise F hF hFLp)
+        eLpNorm_mono_ae_real hSM (hPointwise F hF hFLp)
       _ = ENNReal.ofReal (D * A) * eLpNorm (torusOrbitWeightedNorm β F) 2 volume := by
         rw [eLpNorm_const_smul, Real.enorm_eq_ofReal hDA]
       _ ≤ ENNReal.ofReal (D * A) * (M * eLpNorm F 2 volume) :=
         mul_le_mul' le_rfl (eLpNorm_torusOrbitWeightedNorm_le β F hF hFLp)
       _ = _ := by rw [ENNReal.ofReal_mul hD]; simp only [C, mul_assoc]
-  exact ⟨⟨hSM, hNorm.trans_lt (ENNReal.mul_lt_top
-    (ENNReal.mul_lt_top ENNReal.ofReal_lt_top hC) hFLp.2)⟩, hNorm⟩
+  exact ⟨hNorm.trans_lt (ENNReal.mul_lt_top
+    (ENNReal.mul_lt_top ENNReal.ofReal_lt_top hC) hFLp), hNorm⟩
 
 /-- If the kernel fixes every active frequency, convolution recovers the
 real orbit almost everywhere along almost every phase. -/
@@ -646,7 +646,7 @@ theorem exists_torusSchwartzOrbitSamplingCLM
     calc
       ‖L f‖ = (eLpNorm (S (R f)) 2 volume).toReal := Lp.norm_toLp _ (hMem f)
       _ ≤ (A * eLpNorm f 2 volume).toReal :=
-        ENNReal.toReal_mono (ENNReal.mul_lt_top hA (Lp.memLp f).2).ne h
+        ENNReal.toReal_mono (ENNReal.mul_lt_top hA (Lp.memLp f)).ne h
       _ = _ := by rw [ENNReal.toReal_mul, Lp.norm_def]
   exact ⟨L₀.mkContinuous A.toReal hNorm, hL⟩
 

@@ -25,6 +25,7 @@ Install the toolchain named in `lean-toolchain`. From the repository root run th
 ```sh
 lake exe cache get
 lake build
+python3 scripts/audit_axioms.py
 lake comparator --config WholeSpace/comparator.json
 lake comparator --config LowerRay/comparator.json
 ```

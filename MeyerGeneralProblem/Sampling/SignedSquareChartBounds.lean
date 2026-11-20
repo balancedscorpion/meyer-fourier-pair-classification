@@ -187,6 +187,8 @@ end
 end MeyerGeneralProblem.SignedSquareSmoothBounds
 
 namespace MeyerGeneralProblem.SignedSquareSmoothGraphBounds
+
+set_option maxHeartbeats 2400000
 noncomputable section
 open MeasureTheory
 open scoped ContDiff

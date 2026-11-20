@@ -201,10 +201,17 @@ theorem exists_universalGroupedGramOperator_lowerBound (hd : 0 < d) (m : ℕ)
   · apply IsSelfAdjoint.sub
     · exact (ContinuousLinearMap.isPositive_adjoint_comp_self
         (horder.universalGroupedBesselAnalysis hd m hm).synthesis).isSelfAdjoint
-    · rw [RCLike.real_smul_eq_coe_smul (K := ℂ)]
-      apply IsSelfAdjoint.smul
-      · rw [isSelfAdjoint_iff]; simp
-      · exact ContinuousLinearMap.isPositive_one.isSelfAdjoint
+    · apply ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mpr
+      intro u v
+      simp only [ContinuousLinearMap.coe_coe, ContinuousLinearMap.smul_apply,
+        ContinuousLinearMap.one_apply]
+      have hreal (c : ℝ) (w : CoefficientSpace horder.signedGrouping.Index) : c • w = (c : ℂ) • w := by
+        ext i
+        simp only [lp.coeFn_smul, Pi.smul_apply]
+        exact RCLike.real_smul_eq_coe_smul (K := ℂ) c (w i)
+      rw [hreal, hreal]
+      exact (inner_smul_real_left (𝕜 := ℂ) u v _).trans
+        (inner_smul_real_right (𝕜 := ℂ) u v _).symm
   · intro c
     change 0 ≤ RCLike.re (inner ℂ ((horder.universalGroupedGramOperator hd m hm-a • 1) c) c)
     rw [sub_apply,inner_sub_left,map_sub]

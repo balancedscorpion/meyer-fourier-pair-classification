@@ -64,42 +64,6 @@
     ],
     "main_results": [
       {
-        "declaration": "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
-        "file": "LowerRay/Solution.lean",
-        "comparator_config": "LowerRay/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
-        "declaration": "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
-        "file": "LowerRay/Solution.lean",
-        "comparator_config": "LowerRay/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
-        "declaration": "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
-        "file": "LowerRay/Solution.lean",
-        "comparator_config": "LowerRay/comparator.json",
-        "sorry_count": 0,
-        "axioms": [
-          "propext",
-          "Quot.sound",
-          "Classical.choice"
-        ],
-        "literature_dependencies": []
-      },
-      {
         "declaration": "MeyerGeneralProblem.exists_finiteExponentialAnnihilator_of_finite_lower_ray_count",
         "file": "LowerRay/Solution.lean",
         "comparator_config": "LowerRay/comparator.json",
@@ -125,6 +89,42 @@
       },
       {
         "declaration": "MeyerGeneralProblem.finiteModulatedDiracCombSum_pair_of_fourier_finite_lower_ray_count",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz_apply_subtype",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
+        "file": "LowerRay/Solution.lean",
+        "comparator_config": "LowerRay/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
         "file": "LowerRay/Solution.lean",
         "comparator_config": "LowerRay/comparator.json",
         "sorry_count": 0,

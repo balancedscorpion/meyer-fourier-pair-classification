@@ -89,7 +89,7 @@ def unitModulusMultiplier {u : Θ → ℂ} (hMeas : AEStronglyMeasurable u μ)
     change ‖unitModulusMul hMeas hUnit f‖ = ‖f‖
     rw [Lp.norm_def, Lp.norm_def]
     congr 1
-    apply eLpNorm_congr_norm_ae
+    apply eLpNorm_congr_norm_ae (Lp.aestronglyMeasurable _) (Lp.aestronglyMeasurable _)
     filter_upwards [coeFn_unitModulusMul hMeas hUnit f, hUnit] with θ h1 h2
     rw [h1, norm_mul, h2, one_mul]
 

@@ -35,10 +35,7 @@ private theorem polynomialMonomialSubmonoid_le_nonZeroDivisors (ι : Type*) :
     polynomialMonomialSubmonoid ι ≤ nonZeroDivisors (MvPolynomial ι ℂ) := by
   classical
   rintro _ ⟨a, rfl⟩
-  exact mem_nonZeroDivisors_of_ne_zero (by
-    intro h
-    have he := congrArg (MvPolynomial.coeff a) h
-    simp [MvPolynomial.coeff_monomial] at he)
+  exact mem_nonZeroDivisors_of_ne_zero (fun h => one_ne_zero (MvPolynomial.monomial_eq_zero.mp h))
 
 /-- A nonzero Laurent monomial is a unit, with inverse at the opposite
 exponent in the original group. -/
