@@ -105,6 +105,7 @@ theorem spectralModule_fg_and_exists_vanishing_exponential_of_unitCellBound
   exact finiteExponentialSymbol_eq_zero_of_annihilated_of_nonzero_atom A U hA a c hz
     ⟨x, hx⟩ (hAactual ⟨x, hx⟩)
 
+attribute [-instance] instCommCStarAlgebraComplex in
 /-- The exact module of the whole broad pair space is finitely generated.
 One polynomial in that module vanishes on every active physical site
 and annihilates every member of the space. -/

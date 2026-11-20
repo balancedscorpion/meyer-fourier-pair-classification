@@ -16,7 +16,7 @@ Let T be a tempered distribution on the real line with value-only atomic records
 
 Value-only atomicity means that the distribution vanishes on every Schwartz test function whose values vanish at all carrier sites. This excludes derivatives of point masses. A carrier may include inactive sites. In the comb implication with a one-ray count, each site on the entire counted carrier must have a nonzero coefficient. The opposite carrier may contain inactive sites. All frequencies are real, the comb steps are positive and Fourier transformation uses the negative exponential sign.
 
-Each Challenge imports Mathlib directly. The named definition holes are specified by compared theorems giving the value of an isolating test on the carrier, the action of a modulated comb on every Schwartz test, and pointwise multiplication by the annihilating polynomial. The whole-space Challenge also characterizes the lattice union by its exact membership test. These specifications fix the coefficient evaluations and spaces used by the statements.
+Each Challenge imports Mathlib directly. The named definition holes are specified by compared theorems giving the value of an isolating test on the carrier, the action of a modulated comb on every Schwartz test, and pointwise multiplication by the annihilating polynomial. The whole-space Challenge gives membership tests for the fixed-carrier space, the active support, the lattice union, the rational direction classes and the union of envelope spaces. Its evaluation formulas specify the Fourier map, atomic coefficients, both rows at each hole, residue rows and comb synthesis. The rank formula specifies each envelope nullity.
 
 ## Building and verifying
 
@@ -30,7 +30,7 @@ lake comparator --config WholeSpace/comparator.json
 lake comparator --config LowerRay/comparator.json
 ```
 
-Each entry uses the repository root as its Lake project. Select the matching Comparator and metadata paths above. The manual GitHub workflow runs Palomar’s full reusable preflight against a specified public commit. The present claims concern the stated carrier and counting hypotheses. The unrestricted Meyer problem remains open.
+Each entry uses the repository root as its Lake project. Select the matching Comparator and metadata paths above. The manual GitHub workflow runs Palomar’s full reusable preflight against the exact public commit selected by the workflow dispatch. The present claims concern the stated carrier and counting hypotheses. The unrestricted Meyer problem remains open.
 
 ## Mathematical and formal sources
 

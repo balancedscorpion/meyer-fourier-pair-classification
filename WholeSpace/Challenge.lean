@@ -399,14 +399,14 @@ namespace LatticePartnerResidueCoordinates
 variable {E F : Finset (ℝ × ℝ)} {w : ℝ}
 
 /-- The finite row map of this ordered partner. -/
-def residueRows (d : LatticePartnerResidueCoordinates E F w) :=
+abbrev residueRows (d : LatticePartnerResidueCoordinates E F w) :=
   latticeOrbitResidueRows
     (affineLatticeUnionCarrier (latticeDirectionClass E (rationalLineDirection w)))
     d.orbitStep d.origin d.modes d.modulus
 
 /-- A physical coefficient, with ordinary addition at all coincident
 sites of the original combs. -/
-def physicalCoefficient (d : LatticePartnerResidueCoordinates E F w)
+abbrev physicalCoefficient (d : LatticePartnerResidueCoordinates E F w)
     (c : LinearMap.ker d.residueRows) (x : ℝ) : ℂ := by
   letI := d.orbitFintype
   exact ∑ i, ∑ j, (⟨d.modes.get j, d.origin i, c.val i j⟩ : AffineCombTerm).coefficientFunction
@@ -414,7 +414,7 @@ def physicalCoefficient (d : LatticePartnerResidueCoordinates E F w)
 
 /-- A Fourier coefficient with the original reciprocal coset and
 Poisson phase of each summand. -/
-def fourierCoefficient (d : LatticePartnerResidueCoordinates E F w)
+abbrev fourierCoefficient (d : LatticePartnerResidueCoordinates E F w)
     (c : LinearMap.ker d.residueRows) (x : ℝ) : ℂ := by
   letI := d.orbitFintype
   exact ∑ i, ∑ j, ((⟨d.modes.get j, d.origin i, c.val i j⟩ : AffineCombTerm).fourierTerm
