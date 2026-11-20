@@ -52,7 +52,7 @@ theorem exists_laurentTrimmedRecurrence (b : Module.Basis ι ℤ G)
     have hfin := FiniteMultiplicity.of_prime_left hp hP
     obtain ⟨q, hPq, hq⟩ := hfin.exists_eq_pow_mul_and_not_dvd
     obtain ⟨m, hm⟩ := Nat.exists_eq_succ_of_ne_zero
-      (multiplicity_pos_of_dvd hdiv).ne'
+      (multiplicity_pos_of_dvd hdiv hfin).ne'
     have he : P = p ^ (m + 1) * q := by simpa only [hm] using hPq
     have hq' : q ≠ 0 := fun h => hP (by rw [he, h, mul_zero])
     have hstrict : DvdNotUnit q P := by

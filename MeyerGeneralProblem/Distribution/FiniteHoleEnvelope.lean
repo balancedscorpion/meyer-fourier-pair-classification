@@ -22,7 +22,7 @@ open scoped FourierTransform
 
 /-- Finite unions of full positive-step lattices with finitely many holes
 in the given common carrier. -/
-def FiniteHoleEnvelope (S : LocallyFiniteCarrier) :=
+abbrev FiniteHoleEnvelope (S : LocallyFiniteCarrier) :=
   {E : Finset (ℝ × ℝ) // (∀ p ∈ E, 0 < p.2) ∧
     ((affineLatticeUnionCarrier E).carrier \ S.carrier).Finite}
 
@@ -31,7 +31,7 @@ namespace FiniteHoleEnvelope
 variable {S : LocallyFiniteCarrier}
 
 /-- The locally finite carrier of the envelope before deleting holes. -/
-def carrier (E : FiniteHoleEnvelope S) : LocallyFiniteCarrier :=
+abbrev carrier (E : FiniteHoleEnvelope S) : LocallyFiniteCarrier :=
   affineLatticeUnionCarrier E.val
 
 /-- The empty lattice union viewed as a finite-hole envelope. -/
@@ -74,7 +74,7 @@ theorem carrier_subset_union_right (E F : FiniteHoleEnvelope S) :
     ⟨p, Finset.mem_union_right _ hp, hxp⟩
 
 /-- The original source subspace on the intersection with the envelope. -/
-def embeddedSpace (E : FiniteHoleEnvelope S) : Submodule ℂ (TemperedDistribution ℝ ℂ) :=
+abbrev embeddedSpace (E : FiniteHoleEnvelope S) : Submodule ℂ (TemperedDistribution ℝ ℂ) :=
   DistributionalMeyerPairSpace (commonCarrierIntersection E.carrier S)
     (commonCarrierIntersection E.carrier S)
 

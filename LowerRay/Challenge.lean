@@ -1,5 +1,6 @@
 module
 
+public import Mathlib.Analysis.CStarAlgebra.Classes
 public import Mathlib.Analysis.Distribution.TemperedDistribution
 
 /-!
@@ -47,6 +48,7 @@ finite carrier. -/
 def SchwartzVanishesOn (S : LocallyFiniteCarrier) (f : SchwartzMap ℝ ℂ) : Prop :=
   ∀ x ∈ S.carrier, f x = 0
 
+attribute [-instance] instCommCStarAlgebraComplex in
 /-- A tempered distribution is order-zero supported on `S` when it
 annihilates every Schwartz function vanishing on the whole carrier. -/
 def AtomicOnCarrier (S : LocallyFiniteCarrier)
@@ -77,16 +79,17 @@ structure AffineCombTerm where
   coefficient : ℂ
 
 /-- The original tempered distribution defined by one comb summand. -/
-def AffineCombTerm.distribution (q : AffineCombTerm) (w : ℝ) (hw : 0 < w) :
+abbrev AffineCombTerm.distribution (q : AffineCombTerm) (w : ℝ) (hw : 0 < w) :
     TemperedDistribution ℝ ℂ :=
   q.coefficient • modulatedAffineDiracComb w hw q.origin q.frequency
 
 /-- The distribution is a finite sum of actual modulated Dirac combs. -/
-def IsFiniteModulatedDiracCombSum (T : TemperedDistribution ℝ ℂ) : Prop :=
+abbrev IsFiniteModulatedDiracCombSum (T : TemperedDistribution ℝ ℂ) : Prop :=
   ∃ (ι : Type) (inst : Fintype ι), letI := inst
     ∃ (q : ι → AffineCombTerm) (w : ι → ℝ) (hw : ∀ i, 0 < w i),
       T = ∑ i, (q i).distribution (w i) (hw i)
 
+attribute [-instance] instCommCStarAlgebraComplex in
 /-- Multiplication by the literal positive-phase finite exponential symbol. -/
 def finiteExponentialMultiplication {ι : Type*} [Fintype ι]
     (a : ι → ℝ) (c : ι → ℂ) :

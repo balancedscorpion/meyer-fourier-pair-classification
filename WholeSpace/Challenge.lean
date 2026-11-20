@@ -1,5 +1,6 @@
 module
 
+public import Mathlib.Analysis.CStarAlgebra.Classes
 public import Mathlib.Analysis.Distribution.TemperedDistribution
 public import Mathlib.FieldTheory.IntermediateField.Adjoin.Defs
 public import Mathlib.LinearAlgebra.Matrix.Rank
@@ -57,6 +58,7 @@ finite carrier. -/
 def SchwartzVanishesOn (S : LocallyFiniteCarrier) (f : SchwartzMap ℝ ℂ) : Prop :=
   ∀ x ∈ S.carrier, f x = 0
 
+attribute [-instance] instCommCStarAlgebraComplex in
 /-- A tempered distribution is order-zero supported on `S` when it
 annihilates every Schwartz function vanishing on the whole carrier. -/
 def AtomicOnCarrier (S : LocallyFiniteCarrier)
@@ -87,16 +89,17 @@ structure AffineCombTerm where
   coefficient : ℂ
 
 /-- The original tempered distribution defined by one comb summand. -/
-def AffineCombTerm.distribution (q : AffineCombTerm) (w : ℝ) (hw : 0 < w) :
+abbrev AffineCombTerm.distribution (q : AffineCombTerm) (w : ℝ) (hw : 0 < w) :
     TemperedDistribution ℝ ℂ :=
   q.coefficient • modulatedAffineDiracComb w hw q.origin q.frequency
 
 /-- The distribution is a finite sum of actual modulated Dirac combs. -/
-def IsFiniteModulatedDiracCombSum (T : TemperedDistribution ℝ ℂ) : Prop :=
+abbrev IsFiniteModulatedDiracCombSum (T : TemperedDistribution ℝ ℂ) : Prop :=
   ∃ (ι : Type) (inst : Fintype ι), letI := inst
     ∃ (q : ι → AffineCombTerm) (w : ι → ℝ) (hw : ∀ i, 0 < w i),
       T = ∑ i, (q i).distribution (w i) (hw i)
 
+attribute [-instance] instCommCStarAlgebraComplex in
 /-- Multiplication by the literal positive-phase finite exponential symbol. -/
 def finiteExponentialMultiplication {ι : Type*} [Fintype ι]
     (a : ι → ℝ) (c : ι → ℂ) :
@@ -120,67 +123,48 @@ noncomputable def windowCount (S : LocallyFiniteCarrier) (a L : ℝ) : ℕ :=
 def UnitCellBound (S : LocallyFiniteCarrier) (K : ℕ) : Prop :=
   ∀ n : ℤ, windowCount S n 1 ≤ K
 
-/-- The complex submodule of Schwartz functions vanishing on a locally
-finite carrier. -/
-def schwartzVanishingSubmodule (S : LocallyFiniteCarrier) :
-    Submodule ℂ (SchwartzMap ℝ ℂ) where
-  carrier := {f | SchwartzVanishesOn S f}
-  zero_mem' := by
-    intro x hx
-    simp
-  add_mem' := by
-    intro f g hf hg x hx
-    simp [hf x hx, hg x hx]
-  smul_mem' := by
-    intro c f hf x hx
-    simp [hf x hx]
-
-/-- Continuous complex-linear functionals, equipped with pointwise
-convergence, which vanish on a submodule. -/
-def continuousAnnihilator {E : Type*} [TopologicalSpace E] [AddCommGroup E]
-    [Module ℂ E] (W : Submodule ℂ E) : Submodule ℂ (E →Lₚₜ[ℂ] ℂ) where
-  carrier := {T | ∀ x ∈ W, T x = 0}
-  zero_mem' := by
-    intro x hx
-    simp
-  add_mem' := by
-    intro T U hT hU x hx
-    simp [hT x hx, hU x hx]
-  smul_mem' := by
-    intro c T hT x hx
-    simp [hT x hx]
-
-/-- The continuous annihilator of a Schwartz submodule, regarded as a
-submodule of complex tempered distributions. -/
-def schwartzAnnihilator (W : Submodule ℂ (SchwartzMap ℝ ℂ)) :
-    Submodule ℂ (TemperedDistribution ℝ ℂ) :=
-  continuousAnnihilator W
-
-/-- The distributional Fourier transform as a complex-linear map. -/
+attribute [-instance] instCommCStarAlgebraComplex in
+/-- Fourier transform on tempered distributions, characterized on every input. -/
 def temperedFourierLinearMap :
-    TemperedDistribution ℝ ℂ →ₗ[ℂ] TemperedDistribution ℝ ℂ where
-  toFun := FourierTransform.fourier
-  map_add' := FourierTransform.fourier_add
-  map_smul' := FourierTransform.fourier_smul
+    TemperedDistribution ℝ ℂ →ₗ[ℂ] TemperedDistribution ℝ ℂ := by
+  sorry
 
-/-- The complete broad space with physical carrier `A` and spectral carrier `B`. -/
+attribute [-instance] instCommCStarAlgebraComplex in
+theorem temperedFourierLinearMap_apply (T : TemperedDistribution ℝ ℂ) :
+    temperedFourierLinearMap T = FourierTransform.fourier T := by
+  sorry
+
+/-- The fixed-carrier space consists exactly of the atomic pairs in the next equivalence. -/
 def DistributionalMeyerPairSpace (A B : LocallyFiniteCarrier) :
-    Submodule ℂ (TemperedDistribution ℝ ℂ) :=
-  schwartzAnnihilator (schwartzVanishingSubmodule A) ⊓
-    (schwartzAnnihilator (schwartzVanishingSubmodule B)).comap temperedFourierLinearMap
+    Submodule ℂ (TemperedDistribution ℝ ℂ) := by
+  sorry
+
+theorem mem_distributionalMeyerPairSpace_iff (A B : LocallyFiniteCarrier)
+    (U : TemperedDistribution ℝ ℂ) :
+    U ∈ DistributionalMeyerPairSpace A B ↔ AtomicOnCarrier A U ∧ AtomicOnCarrier B (𝓕 U) := by
+  sorry
 
 /-- The actual coefficient measured by the carrier isolation test. -/
 def atomicCoefficientLinearMap (A : LocallyFiniteCarrier) (x : A.subtype) :
-    TemperedDistribution ℝ ℂ →ₗ[ℂ] ℂ where
-  toFun U := U (A.isolationSchwartz x)
-  map_add' _ _ := rfl
-  map_smul' _ _ := rfl
+    TemperedDistribution ℝ ℂ →ₗ[ℂ] ℂ := by
+  sorry
+
+theorem atomicCoefficientLinearMap_on_tests (A : LocallyFiniteCarrier) (x : A.subtype)
+    (T : TemperedDistribution ℝ ℂ) :
+    atomicCoefficientLinearMap A x T = T (A.isolationSchwartz x) := by
+  sorry
 
 /-- All sites in `S` used by at least one vector of a space of distributions. -/
 def atomicSupportUnion (S : LocallyFiniteCarrier)
     (V : Submodule ℂ (TemperedDistribution ℝ ℂ)) : LocallyFiniteCarrier :=
-  S.restrict {x | ∃ hx : x ∈ S.carrier, ∃ U : V, (U : TemperedDistribution ℝ ℂ)
-    (S.isolationSchwartz ⟨x, hx⟩) ≠ 0} (fun _ ⟨hx, _⟩ => hx)
+  by sorry
+
+theorem mem_atomicSupportUnion_iff (S : LocallyFiniteCarrier)
+    (V : Submodule ℂ (TemperedDistribution ℝ ℂ)) (x : ℝ) :
+    x ∈ (atomicSupportUnion S V).carrier ↔
+      ∃ hx : x ∈ S.carrier, ∃ U : V,
+        (U : TemperedDistribution ℝ ℂ) (S.isolationSchwartz ⟨x, hx⟩) ≠ 0 := by
+  sorry
 
 /-- The full affine integer line, including the zero-step singleton. -/
 def affineLatticeLine (y w : ℝ) : Set ℝ :=
@@ -205,15 +189,19 @@ def CommonCarrierHole (L S : LocallyFiniteCarrier) : Type :=
 
 /-- Both literal coefficient rows at each original missing site. -/
 def commonCarrierHoleRows (L S : LocallyFiniteCarrier) :
-    DistributionalMeyerPairSpace L L →ₗ[ℂ] (CommonCarrierHole L S → ℂ × ℂ) :=
-  LinearMap.pi fun x =>
-    ((atomicCoefficientLinearMap L x.val).comp (DistributionalMeyerPairSpace L L).subtype).prod
-      ((atomicCoefficientLinearMap L x.val).comp
-        (temperedFourierLinearMap.comp (DistributionalMeyerPairSpace L L).subtype))
+    DistributionalMeyerPairSpace L L →ₗ[ℂ] (CommonCarrierHole L S → ℂ × ℂ) := by
+  sorry
+
+theorem commonCarrierHoleRows_apply_pair (L S : LocallyFiniteCarrier)
+    (T : DistributionalMeyerPairSpace L L) (x : CommonCarrierHole L S) :
+    commonCarrierHoleRows L S T x =
+      ((T : TemperedDistribution ℝ ℂ) (L.isolationSchwartz x.val),
+       (𝓕 (T : TemperedDistribution ℝ ℂ)) (L.isolationSchwartz x.val)) := by
+  sorry
 
 /-- Finite unions of full positive-step lattices with finitely many holes
 in the given common carrier. -/
-def FiniteHoleEnvelope (S : LocallyFiniteCarrier) :=
+abbrev FiniteHoleEnvelope (S : LocallyFiniteCarrier) :=
   {E : Finset (ℝ × ℝ) // (∀ p ∈ E, 0 < p.2) ∧
     ((affineLatticeUnionCarrier E).carrier \ S.carrier).Finite}
 
@@ -222,26 +210,34 @@ namespace FiniteHoleEnvelope
 variable {S : LocallyFiniteCarrier}
 
 /-- The locally finite carrier of the envelope before deleting holes. -/
-def carrier (E : FiniteHoleEnvelope S) : LocallyFiniteCarrier :=
+abbrev carrier (E : FiniteHoleEnvelope S) : LocallyFiniteCarrier :=
   affineLatticeUnionCarrier E.val
 
 /-- The original source subspace on the intersection with the envelope. -/
-def embeddedSpace (E : FiniteHoleEnvelope S) : Submodule ℂ (TemperedDistribution ℝ ℂ) :=
+abbrev embeddedSpace (E : FiniteHoleEnvelope S) : Submodule ℂ (TemperedDistribution ℝ ℂ) :=
   DistributionalMeyerPairSpace (commonCarrierIntersection E.carrier S)
     (commonCarrierIntersection E.carrier S)
 
 /-- The dimension of the entire envelope space minus the rank of all its
 original physical and Fourier hole rows. -/
-def nullity (E : FiniteHoleEnvelope S) : ℕ :=
-  Module.finrank ℂ (DistributionalMeyerPairSpace E.carrier E.carrier) -
-    Module.finrank ℂ (LinearMap.range (commonCarrierHoleRows E.carrier S))
+def nullity (E : FiniteHoleEnvelope S) : ℕ := by
+  sorry
+
+theorem nullity_eq_dimension_sub_rank {S : LocallyFiniteCarrier} (E : FiniteHoleEnvelope S) :
+    E.nullity = Module.finrank ℂ (DistributionalMeyerPairSpace E.carrier E.carrier) -
+      Module.finrank ℂ (LinearMap.range (commonCarrierHoleRows E.carrier S)) := by
+  sorry
 
 end FiniteHoleEnvelope
 
 /-- The directed union of the embedded kernels over all finite-hole envelopes. -/
 def finiteHoleEnvelopeSpace (S : LocallyFiniteCarrier) :
-    Submodule ℂ (TemperedDistribution ℝ ℂ) :=
-  ⨆ E : FiniteHoleEnvelope S, E.embeddedSpace
+    Submodule ℂ (TemperedDistribution ℝ ℂ) := by
+  sorry
+
+theorem mem_finiteHoleEnvelopeSpace (S : LocallyFiniteCarrier) (T : TemperedDistribution ℝ ℂ) :
+    T ∈ finiteHoleEnvelopeSpace S ↔ ∃ E : FiniteHoleEnvelope S, T ∈ E.embeddedSpace := by
+  sorry
 
 /-- On every bounded-count common carrier the complete space equals a
 finite-hole envelope kernel attaining the maximum nullity. -/
@@ -268,11 +264,15 @@ def rationalLineDirection (d : ℝ) : Submodule ℚ ℝ :=
 /-- The cosets in a finite lattice presentation having one direction. -/
 def latticeDirectionClass (E : Finset (ℝ × ℝ)) (D : Submodule ℚ ℝ) :
     Finset (ℝ × ℝ) := by
-  classical
-  exact E.filter fun v => rationalLineDirection v.2 = D
+  sorry
+
+theorem mem_latticeDirectionClass (E : Finset (ℝ × ℝ)) (D : Submodule ℚ ℝ)
+    (v : ℝ × ℝ) : v ∈ latticeDirectionClass E D ↔
+      v ∈ E ∧ rationalLineDirection v.2 = D := by
+  sorry
 
 /-- Physical and reciprocal spectral direction carriers for one partner. -/
-def latticePartnerPairSpace (E F : Finset (ℝ × ℝ)) (w : ℝ) :
+abbrev latticePartnerPairSpace (E F : Finset (ℝ × ℝ)) (w : ℝ) :
     Submodule ℂ (TemperedDistribution ℝ ℂ) :=
   DistributionalMeyerPairSpace
     (affineLatticeUnionCarrier (latticeDirectionClass E (rationalLineDirection w)))
@@ -288,30 +288,28 @@ of the character sum along the residue progression. -/
 def latticeOrbitResidueRows {ι : Type*} (A : LocallyFiniteCarrier) (w : ℝ)
     (origin : ι → ℝ) (modes : List ℝ) (p : ℕ) :
     (ι → Fin modes.length → ℂ) →ₗ[ℂ]
-      (ForbiddenLatticeOrbitResidue A w origin p → Fin modes.length → ℂ) where
-  toFun c r n := ∑ j, c r.val.1 j * combModulationCharacter (modes.get j)
-    (origin r.val.1 + (((r.val.2.val : ℤ) - (n.val : ℤ) * (p : ℤ) : ℤ) : ℝ) * w)
-  map_add' c d := by
-    funext r n
-    simp only [Pi.add_apply, add_mul, Finset.sum_add_distrib]
-  map_smul' a c := by
-    funext r n
-    simp only [Pi.smul_apply, smul_eq_mul, ← mul_assoc, Finset.mul_sum, RingHom.id_apply]
+      (ForbiddenLatticeOrbitResidue A w origin p → Fin modes.length → ℂ) := by
+  sorry
+
+theorem latticeOrbitResidueRows_apply_entry {ι : Type*} (A : LocallyFiniteCarrier) (w : ℝ)
+    (origin : ι → ℝ) (modes : List ℝ) (p : ℕ) (c : ι → Fin modes.length → ℂ)
+    (r : ForbiddenLatticeOrbitResidue A w origin p) (n : Fin modes.length) :
+    latticeOrbitResidueRows A w origin modes p c r n =
+      ∑ j, c r.val.1 j * combModulationCharacter (modes.get j)
+        (origin r.val.1 + (((r.val.2.val : ℤ) - (n.val : ℤ) * (p : ℤ) : ℤ) : ℝ) * w) := by
+  sorry
 
 /-- Synthesize the original distribution from the orbit coefficient array. -/
 def latticeOrbitSynthesis {ι : Type*} [Fintype ι] (w : ℝ) (hw : 0 < w)
     (origin : ι → ℝ) (modes : List ℝ) :
-    (ι → Fin modes.length → ℂ) →ₗ[ℂ] TemperedDistribution ℝ ℂ where
-  toFun c := ∑ i, ∑ j, c i j • modulatedAffineDiracComb w hw (origin i) (modes.get j)
-  map_add' c d := by
-    calc
-      _ = ∑ i, ∑ j, (c i j • modulatedAffineDiracComb w hw (origin i) (modes.get j) +
-          d i j • modulatedAffineDiracComb w hw (origin i) (modes.get j)) :=
-        Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ =>
-          add_smul (c i j) (d i j) _
-      _ = _ := by simp only [Finset.sum_add_distrib]
-  map_smul' a c := by
-    simp only [Pi.smul_apply, smul_eq_mul, mul_smul, Finset.smul_sum, RingHom.id_apply]
+    (ι → Fin modes.length → ℂ) →ₗ[ℂ] TemperedDistribution ℝ ℂ := by
+  sorry
+
+theorem latticeOrbitSynthesis_apply {ι : Type*} [Fintype ι] (w : ℝ) (hw : 0 < w)
+    (origin : ι → ℝ) (modes : List ℝ) (c : ι → Fin modes.length → ℂ) :
+    latticeOrbitSynthesis w hw origin modes c =
+      ∑ i, ∑ j, c i j • modulatedAffineDiracComb w hw (origin i) (modes.get j) := by
+  sorry
 
 /-- The literal mass function of an affine modulated comb. -/
 def AffineCombTerm.coefficientFunction (q : AffineCombTerm) (w : ℝ) : ℝ → ℂ :=
@@ -477,6 +475,7 @@ theorem finiteModulatedDiracCombSum_pair_of_two_unitCellBounds
     IsFiniteModulatedDiracCombSum T ∧ IsFiniteModulatedDiracCombSum (𝓕 T) := by
   sorry
 
+attribute [-instance] instCommCStarAlgebraComplex in
 /-- The exact module of the whole broad pair space is finitely generated.
 One polynomial in that module vanishes on every active physical site
 and annihilates every member of the space. -/

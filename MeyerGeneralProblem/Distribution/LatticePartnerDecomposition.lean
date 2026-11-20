@@ -142,7 +142,7 @@ theorem rationalLineDirection_inv_eq_iff {a b : ℝ} (ha : a ≠ 0) :
   exact ⟨fun h => by simpa only [inv_inv] using forward (inv_ne_zero ha) h, forward ha⟩
 
 /-- Physical and reciprocal spectral direction carriers for one partner. -/
-def latticePartnerPairSpace (E F : Finset (ℝ × ℝ)) (w : ℝ) :
+abbrev latticePartnerPairSpace (E F : Finset (ℝ × ℝ)) (w : ℝ) :
     Submodule ℂ (TemperedDistribution ℝ ℂ) :=
   DistributionalMeyerPairSpace
     (affineLatticeUnionCarrier (latticeDirectionClass E (rationalLineDirection w)))

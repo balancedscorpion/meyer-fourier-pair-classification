@@ -1970,11 +1970,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Carrier/CoefficientTail.lean",
-    "source_sha256": "3704cc1f92c01e2d71369a735df4795b133c969da8d42a0918e99ee2b759fef6",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Carrier/DensityPredicates.lean",
     "source_sha256": "c4c3ca9752728a5903fa39b6eea594118c047c21fefa085db27fdbd1ce9a7458",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -1995,24 +1990,9 @@
     "port": "module port"
   },
   {
-    "path": "MeyerGeneralProblem/Carrier/EventualGapCounts.lean",
-    "source_sha256": "f30765426f1f372f0efe9e45d5d73cdf91bc69fa823c4fafc74aa9f028e60f33",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Carrier/FiniteModificationDensity.lean",
     "source_sha256": "7c163db43b502b1d187b136cc1b96fdbbb44d3e6d3e2ba2b0751c700f82daa4d",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Carrier/FoldedSquaredGap.lean",
-    "source_sha256": "5e75b08c43ffcaa3bb0b14095d3234d78e56c3314fe397c4893b19d302727d1e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Carrier/FoldedSquaredTails.lean",
-    "source_sha256": "a17387af4082f57002409c81f1220fa573aa72d4a2d937be685ce64e6caaa687",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Carrier/GeneralIsolation.lean",
@@ -2023,16 +2003,6 @@
     "path": "MeyerGeneralProblem/Carrier/GroupedLimitJets.lean",
     "source_sha256": "a85ef336c183ef758f0c9fdb12ae1849528bc35408bfdf9d74fcb6e92ee40a96",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Carrier/GroupedSynthesisInjectivity.lean",
-    "source_sha256": "f1afb3e06b941fd5487788512146e7f7368b96ad1d3a49920ada589e58075f17",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Carrier/HermiteCross.lean",
-    "source_sha256": "03f1f864dd0de7eda6171a310ad04d5481221c8e2f9cc2b065a11082644ea849",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Carrier/HermiteMeasureSupport.lean",
@@ -2100,11 +2070,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Carrier/SynthesisInjectivity.lean",
-    "source_sha256": "733c25caaeee2261102a7b4c8d403cfd55792975af785094739b60362acfecc7",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Carrier/TwoSided.lean",
     "source_sha256": "30c609525fc84d60228bdecd1384c6056f8256ae5ae6d4c5cccb6ce7c1fa6020",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -2113,76 +2078,6 @@
     "path": "MeyerGeneralProblem/Carrier/UniformDensity.lean",
     "source_sha256": "780e1cf0dc38444f7a1ed91aa23d67efebeb1e5263374fa6509375132a7df93e",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/AllRatioMehler.lean",
-    "source_sha256": "bf4da325556ebaa65125a663608ab4aae35d8bd8aa71229e6d913d122b63e6cd",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/AmplitudeMultiplier.lean",
-    "source_sha256": "ce3791ab32ab583293927b0b76ed3c6d78eb69f69c4a25aaa61adbd70d00f6f9",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/CoefficientKernelExtension.lean",
-    "source_sha256": "4352997eab465c1686a8fa90432d1e205ac157913ba7399dcd46dd1e70873010",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/CompactRemainder.lean",
-    "source_sha256": "4d735547ea02acecb4aeffc65080e99e59e0fa318bc8b0af0cb962f502230588",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/FineLogBlocks.lean",
-    "source_sha256": "661ece95a3c0f9824b367d5312f799b0d90ad80a0885dd3dee3c584de211f2db",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/GroupedNormalizerPeeling.lean",
-    "source_sha256": "94eb1acbf2b9be25d49f2a5038244f3ef14bb78aed7c66709b6996ffef64f3be",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/LeadingAssembly.lean",
-    "source_sha256": "4a5027b4922353aa11dd0b1613ecc539c5c76f62793ecc37e6f5083d7ed9d808",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/LeadingNorm.lean",
-    "source_sha256": "5f9d6b221681c1879c86562e1b3b2068903c57e6a6a808c962992dd6f7af3318",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/LeadingOperator.lean",
-    "source_sha256": "d53d2c63217692e70be2b3cd3190579443a2d81567eeac09dac7ec22ab209efb",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/NormalizedRemainder.lean",
-    "source_sha256": "86c4f9436625f11e19101981c86cea9ff3da106638996c1c573213f5099d64e4",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/OperatorSchur.lean",
-    "source_sha256": "2870ddc26e0e4e658df34663e20cb7d3200f7dac328577ca9dd84a3c65de6709",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/QuantitativeMehler.lean",
-    "source_sha256": "a6020c6be170c3515b30e5a977440afe8b6492a06aec46438f7fbaa6c1f7dc7f",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/RemainderOperator.lean",
-    "source_sha256": "2d2589fdf211895ea84621c6d48d722e282eb836ce679c9ef69aa8cc2ff08e08",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Cross/SymbolBounds.lean",
-    "source_sha256": "b565a085b4833146324848435830c4fda77d78ca9d1375753bc7700a1e52a85c",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Distribution/AffineCellQuadraticCount.lean",
@@ -3410,11 +3305,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Distribution/SchwartzDistributionLeibniz.lean",
-    "source_sha256": "dfb3c47a86fca73a5fddcecb8bf6952f6d3f1be59b5bac0daee981a26211b447",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Distribution/SchwartzDividedDifferenceBounds.lean",
     "source_sha256": "58618aa1e85c119ae61759ba97723600a458ddb0b20cec8355bd79a9c9455eb3",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -3695,29 +3585,9 @@
     "port": "module port"
   },
   {
-    "path": "MeyerGeneralProblem/Endpoint/CanonicalGroupedCompactModel.lean",
-    "source_sha256": "f404bb8032dea1b718c25e944cf64eae3fa6e78b8ce04b422ebc3ba976d0bede",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Endpoint/CarrierCoefficientModel.lean",
-    "source_sha256": "c5e360bd4b78c0f795c0ab4bf65834a57f5ea3328531f78f79c38e1481757c9e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Endpoint/CarrierModelAssembly.lean",
-    "source_sha256": "d618256c2cc5dc6119cdd77b0df5d413f23d4b5c01dea9b936deec7872e5b905",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Endpoint/Certificates.lean",
     "source_sha256": "f863809c5c7d5de5c121993865aa267b23205dc2457f9aaf8270b170fda11fb6",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Endpoint/CompactModelFiniteness.lean",
-    "source_sha256": "d871aee2ef0e3cc7e39fd3420066f9ed223c8d269f91ed0ed9473675788e1bbf",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Endpoint/ExponentialSqueeze.lean",
@@ -3740,79 +3610,14 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Endpoint/SquareWhitenedReducedCross.lean",
-    "source_sha256": "b534acbc07183e33959c54585d61a1bdaf3e247a5d6c1bf375c40b59974504b1",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Endpoint/StrictSubcriticalGap.lean",
-    "source_sha256": "b11bad1418d6ac346e0e50c7a8f33fdeb8b200f03ded457f1ce063523cab2ecc",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Endpoint/WhitenedRange.lean",
     "source_sha256": "073b2ca7f07b4f87aa7529110693c17423e0b970fbfd83e8332c4af3c7a195a5",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Endpoint/WhitenedReducedCross.lean",
-    "source_sha256": "b8d2a3c426a84623429c0b7c38159e0ab2142137b9ed1803f078761dfd2e5c20",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/FourierNormalization.lean",
     "source_sha256": "bc0858dd12e0efe57572a568ce16d0acea25d60abd95f854422689d463569a1b",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Fredholm/ExtendedIndex.lean",
-    "source_sha256": "28f5d2a4860e8a75d96d1e85ea59854f29d078b06860e05db95069dfe30aff27",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Fredholm/PathTransport.lean",
-    "source_sha256": "795e2d789d34742ea81e55b2139b1228c3e5db264fe235e22bdb16519276bcb0",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Fredholm/Perturbation.lean",
-    "source_sha256": "ffc231eb576cf324169510b2e751e36a9d304f4cb2594c5bf39ca93f8177405b",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Fredholm/UpperSemiFredholm.lean",
-    "source_sha256": "d8656828c4d3ecfe411748292518186469af4f9e519d36b9a397142820de4677",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/CanonicalGroupedGram.lean",
-    "source_sha256": "39e5131bbf4528bf4c44425dfe23358353466eeb8a9951d09349923c1e0e598e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/CanonicalGroupedPositivity.lean",
-    "source_sha256": "ff6e674cb6c622976925e24b503a1f2e5ef35f7588c0524969f36528ea9ee0ab",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/CanonicalGroupedUniformFloor.lean",
-    "source_sha256": "8cff58be96fbe703d383dc16c5d531cdf3ccd442f4e299aa5dd6b4fada525852",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/CarrierGramStrictPositivity.lean",
-    "source_sha256": "0430e4696be80a7deb01d4c5234a5028a6df1f56913b2de5a95b7dfdafef1f7e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/CarrierUniversalCompactness.lean",
-    "source_sha256": "e5e0c0ecec7d91edab8844a83f2057826015978568d20a239f93f8129ff688a1",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/CarrierUniversalModel.lean",
-    "source_sha256": "444706fb4eaa3e6c335513e9705806006a9fc430691bf6a0aec834309a88ebb9",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Gram/ClosedRange.lean",
@@ -3830,84 +3635,9 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Gram/FiniteCentralExtension.lean",
-    "source_sha256": "8440162f3003c1919c063bd1c5c7154465e7f754fcc10ef2752891a327b8c7f0",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedDerivativeBounds.lean",
-    "source_sha256": "4098cfd077bfff7c2bcec61590df825278cda792fbb215622d884fe4defd72a3",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedDifferentiatedAsymptotics.lean",
-    "source_sha256": "74ce33f888e9a6c429b7b3af023ec3d4e118727a117a835b32f025353a931cea",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedGramCompactness.lean",
-    "source_sha256": "6823c3343e82351acbbb2f26a3f2d73926bb50f07ffb8e99e59057854d4201c2",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedGramKernel.lean",
-    "source_sha256": "aa313e8e9f62773faea0a41f8068607dd79aa4306109ff7aed7f2242c7f0a66a",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedHigherMixedBounds.lean",
-    "source_sha256": "ca307169609b314e9e7dfec3ea70820b0750dd85b16ec7b7d321b414c276ee16",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedMixedDerivativeBounds.lean",
-    "source_sha256": "a816fc3e32fa4f2d27e50bb983daf3bee3d1261cedd328af4464d3b1db1882af",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedNormalizerBounds.lean",
-    "source_sha256": "50395e6c23dfac1fa112d78c9259187e562e2e42ab9b58f084878f45223f9a28",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedSchurCompactness.lean",
-    "source_sha256": "484155b140be5412a34fb1d1f3c96f11cd5ee0f367eacfd65e8a5127de73c6cd",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedUniversalBounds.lean",
-    "source_sha256": "22bef04eb5f21f5f6d46efdebbabd7190e3c44eda5069b713ca49efb709a9ecf",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/GroupedUniversalPositivity.lean",
-    "source_sha256": "1a890a64b2173adbf9096798fd175d834638f94d928907db1c374afcfec9b179",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/HermiteUniversalLimit.lean",
-    "source_sha256": "3b66a097bbbe8f3951cdce69fbb512450b537ed4e03aceb05b3cc9e491a3f3d3",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/HermiteUniversalUniform.lean",
-    "source_sha256": "7f01c9b3ec0a97ef8b72c9161ee7a42bcb43b815a96cb220a87dfb7db0a28282",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/QuantitativeMehler.lean",
-    "source_sha256": "e69adf1fc286e392e0b216d3a4a9dc3098d3e5dfc80e2209dc9f3752623ed73e",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Gram/RationalDensity.lean",
     "source_sha256": "12eead563c53f62cd486978788ed897dc0a9e121ab3b9d8e6b3284f063b680a5",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Gram/SchurKernelOperator.lean",
-    "source_sha256": "637a6f000395d477d2288281223ff5d0dbb8d3959ea2d325c75bcf0e41cf7fb4",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Gram/UniversalDecay.lean",
@@ -3920,11 +3650,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Gram/UniversalLimitIntegral.lean",
-    "source_sha256": "b3130c7719a468a67828c0b55f19d9a13778aad849ea99022307a732d7110a71",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Gram/UniversalOperator.lean",
     "source_sha256": "e5e4955115a17f19e022bc9c85a1b3fc9766904c64c342a37b370c2e3939a0b9",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -3933,11 +3658,6 @@
     "path": "MeyerGeneralProblem/Gram/Whitening.lean",
     "source_sha256": "246c6185767f97895aebb635641ea7375bfc86a2373ca1fb9ed070d948c4689b",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Hermite/ComplexMehlerFormula.lean",
-    "source_sha256": "f907cebac76f0fc8e6272d93e7f4d7e7677d773dc5a0c160c0515fbc843fcd15",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Hermite/CutoffNorm.lean",
@@ -4010,24 +3730,9 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Hilbert/FiniteCoordinateProjection.lean",
-    "source_sha256": "25c7d111e708dbfb576a2c34379cbd59bf2853fe3df2c927394209ffd3dd2ced",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Hilbert/FiniteDeletionDeficiency.lean",
-    "source_sha256": "3f2f8f9d1422434f01fc5fa711d5ab29e3530110d6624f5a83a3c9770843ee6e",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Hilbert/FriedrichsAngle.lean",
     "source_sha256": "47e82b0b657001dbb6ff9a5ff1557cd780b436bc5f981f4eefa53cd001f21f60",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Hilbert/OrthogonalProjectionExtension.lean",
-    "source_sha256": "fcd639aca60466c7fd88beaaeb171965a5baa8b44d339c830750b3f64b59d521",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Hilbert/TwoProjections.lean",
@@ -4062,26 +3767,6 @@
   {
     "path": "MeyerGeneralProblem/Interpolation/CanonicalExteriorInterpolation.lean",
     "source_sha256": "8d6e1cc2dc7df057b9e25156a765200f6c1132c3ff7896f6c3142c7f119cbdca",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Interpolation/CanonicalGlobalInterpolation.lean",
-    "source_sha256": "8f02afcbf80f61c7cb80a887dc33d401979670a91adefd4070f8cbd892d6f855",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Interpolation/CanonicalLinearExteriorEnergy.lean",
-    "source_sha256": "f036ee12395cd0ccbb569b71fb64f023efc48e0e1d06212728b78738bfee6288",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Interpolation/CanonicalPolynomialLinearity.lean",
-    "source_sha256": "9ff1952859a1cc9d32d68a54223f5be6292c93d6225c2d6acd718f547e0a8336",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Interpolation/CanonicalSobolevDomain.lean",
-    "source_sha256": "8ace445d0fa16c6df713c222dcc6ba01471a6002959a2dc00a4cddd7f0170699",
     "port": "module port"
   },
   {
@@ -4180,11 +3865,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/AmplitudeMultiplier.lean",
-    "source_sha256": "04dc7d49bbdb688ef4d683ae11307e09448211696ddeafd7f6f56908acba8f6d",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/BernsteinGrowth.lean",
     "source_sha256": "ac1fcab977974ef6dd191af2d8ea8c3c7f08847997fba07bf4ceac8ea6004bc1",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -4235,76 +3915,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalBlockScalarIsometry.lean",
-    "source_sha256": "6d75ef8f305b2284ff2c3767af8419c534408134a38d27dcf0690126d40200fd",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalFinitePrefixBound.lean",
-    "source_sha256": "cdf45bb7b56d4bbf72a2ad5595b03dcf20b678bfc876be30e20d9086bc56a423",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalGraphData.lean",
-    "source_sha256": "8130ed929232f617ef6fcd316b8d3eb608a0c5328e9c48d6afb3571987eb10f5",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalGraphInterpolator.lean",
-    "source_sha256": "c6e54d6af7a625c645f5015770afc0c8332a1a9dd3f81332d5948b31b97b5ea5",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalGraphSampler.lean",
-    "source_sha256": "6c1dd5fc8866492e26cc4a39859b9ddb610b47c60774cc4765bcdf0ea2e0e633",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalGraphSamplerBound.lean",
-    "source_sha256": "4a5d5e776bb072d3f9177ae2a0d87aa5909a0fefd7e485ea8e13f479d5d85a42",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalGroupedFinsupp.lean",
-    "source_sha256": "a21eb931baa8b42c154750ef2dda8ecac0e78cbbc82489fcb2c168f6ba287cfa",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalGroupedRiesz.lean",
-    "source_sha256": "3f929ac7ac161aec0578438c24a8a49fea6984683ab52d6af3a9ecb1343f92a5",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalJointSampler.lean",
-    "source_sha256": "032ed0397344c0b89d72504804542760bc9adf1c93efde0226e046055c93a347",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalOrderOnePhysicalTraceBridge.lean",
-    "source_sha256": "697c5ebdf8fa91ef372aa8de4b11454cf88e6bf234ad32777b28889ebc6a3778",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalPrefixGlobalTail.lean",
-    "source_sha256": "a8af021d062184a10177135ce926e7c6a6aab940bf2c8c9b3e1186431aa8c128",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalPrefixTail.lean",
-    "source_sha256": "c048f9b394e5ddb5fa3829657f1c33fd1850ca276b5f245cb433bfb53af5008e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CanonicalTraceNormalization.lean",
-    "source_sha256": "0951c18b90497c6e4973ba76b332017485efd4c9227d71c025956205c5efa58e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/CarrierIngham.lean",
-    "source_sha256": "d797df2d7b28b41121a96f8884a9bc354ebf35d426cf4b1669708c6c0977fbd4",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/ClassicalFourierSobolev.lean",
     "source_sha256": "b3ef10ec5e87010d92c4c628726ccacfac7f0d1c27d077b7ba918a6bf40fcef5",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -4315,29 +3925,9 @@
     "port": "module port"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/ConvexFourierPoincare.lean",
-    "source_sha256": "cc2d797d3c1c11efd806e8643e7f3ce15a8b8d1817a9de84701f77ca8e62073b",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/ConvexPoincare.lean",
-    "source_sha256": "b617b5e0700840831afe621dae566d46b6e47dd56aee10acded48d7b9b5f854e",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/CosineIngham.lean",
     "source_sha256": "c3c129781effa8fd118ceb041823ee89c944dc1ec3e471cc08e4307b4f9893ec",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/DirichletPoincare.lean",
-    "source_sha256": "f405255933cd1aecd0ec4bef7d311b1f16d15190cb1cc2ffc43cfcd8d078b553",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/FiniteWindowDuality.lean",
-    "source_sha256": "456731892d7d7901d5437b93e84f3da814c113967deb76271189468ff384b791",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Sampling/FourierBandCutoff.lean",
@@ -4392,11 +3982,6 @@
   {
     "path": "MeyerGeneralProblem/Sampling/GroupedDensityColouring.lean",
     "source_sha256": "bba851dd97c34774bc0821d078d1bf2288dd3fe399903a7a1fb294dd317cf6d0",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/GroupedDensityRiesz.lean",
-    "source_sha256": "d12b02734d46f9e186ae8a5cd49d8c2c99f957a5733f44eca29b12794954e797",
     "port": "module port"
   },
   {
@@ -4455,11 +4040,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/GroupedRieszLower.lean",
-    "source_sha256": "a25e255fc9d59d11c129f8682f5ba426766ee061439479cc4ddd4d784d877270",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/GroupedSmoothingCorrection.lean",
     "source_sha256": "a5685ff72c0dcc0d753153e337d38be542ecd9918c7f544341b712d7397d8e6d",
     "port": "module port"
@@ -4480,56 +4060,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/KNSClaimThreeDecay.lean",
-    "source_sha256": "30b613e75f47e5b928ece764d23ab70a2bfdddf1f9592b80e06c45f6e9688563",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSClaimThreeGaussianImprovement.lean",
-    "source_sha256": "17271fd2e3432671a21c69aee47057f6d4f206d24d6a6bd8e9c5152c796fadf5",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSClassicalUniqueness.lean",
-    "source_sha256": "19d152591903edc17d94ac49ddbc89829257e8265f54315b0c572518f4d672f4",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSCommonRateStep.lean",
-    "source_sha256": "b909cdc61c8a674a29fc6a31abbfd66cc37547dc177a5071e625e11478f6ec11",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSFiniteRateIteration.lean",
-    "source_sha256": "c962decd16ffbf0417a3a5dee311d815c8c57ba0c1efb7e13b567fbaba45e0dc",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSFourierEntirePair.lean",
-    "source_sha256": "1916fd2f72215c6bee712386dc18e51cddbc457cc476390a5bbfd966952e8896",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGaussianDecay.lean",
-    "source_sha256": "05b20d6eb11d48465e30e0b4d55bd2de2a7f706a49b80f6fa4bf24622a7c9d74",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGaussianRateFiniteness.lean",
-    "source_sha256": "e4f4f07e5f20bd139b232f0ca095b4f0c6432c3092b97eb9480b6fbfa42bc5bf",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGaussianRateImprovement.lean",
-    "source_sha256": "3b7ca20fd1a4b2c441fd771ac1bb6a780c8a0aa56202d97a0a37cbee50baeac0",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGraphChart.lean",
-    "source_sha256": "ce49366c720899a1f90c95c8606dba63976009bf3d2b7ad43a4a5387e240131d",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/KNSGraphDerivative.lean",
     "source_sha256": "d803752c280d15652970f7e42871de2004dbca92874157392e62f34f360f1a9d",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -4545,21 +4075,6 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/KNSGraphPointBound.lean",
-    "source_sha256": "29a61a3955eedc65090df4e6bd9865395f3fb91019c6515f491f9a46ed131024",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGraphPointIdentification.lean",
-    "source_sha256": "08342b4e05fde0ee86784b7afa236052ed2f1ada608abf8512af9ce213d29960",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGraphRegularization.lean",
-    "source_sha256": "58583b413f8ba9ffc83d12a952754b5fd5300be5efcac7cf5a0e7fc6ccbe4cf7",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/KNSGraphRepresentative.lean",
     "source_sha256": "18f98c62f099889cfd06d0c2acbbca40bd9623670d69fc9c86257748bbbc0225",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
@@ -4568,11 +4083,6 @@
     "path": "MeyerGeneralProblem/Sampling/KNSGraphSchwartzComparison.lean",
     "source_sha256": "6ff41da72281c19a8388b53de3a021c3ef72dae5fef19ddce738f347997119ac",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSGraphSmoothApproximation.lean",
-    "source_sha256": "c86e6d3b843eccfee2e3f23e74a5ef1cba9046906cd4f05bc5e191795c3a08db",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Sampling/KNSGraphSpace.lean",
@@ -4590,169 +4100,9 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/KNSGraphUniqueness.lean",
-    "source_sha256": "8cd72ca3858630c3627723ec6da64b348724d703b1a377a4466914f7fa540ca4",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSLocalJensen.lean",
-    "source_sha256": "c87538d59df8cefee59b6f8cfc00aea4a5167cfc141fe29631c57496ad13acf3",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSLocalizedFourierEnergy.lean",
-    "source_sha256": "3f56fd770eed351420950f47de4691b60deeafd8e8769a70af8c7165253cab42",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSLocalizedPoincare.lean",
-    "source_sha256": "79d3d044a4831ce79b64b38af2f07151faf176c970a22e42a4bd37249d738cfc",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSLocalizerFourier.lean",
-    "source_sha256": "c31163ebf45b76e2026d0e8801bfeb05888e67ae5671a5c03f0940dd4fba6060",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSLocalizerRegularity.lean",
-    "source_sha256": "4167f01a9fe55b4fad976544d76b7e3ba5587c3274e6fe0f46ab538f983e6662",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/KNSMixedWeightedSchwartz.lean",
     "source_sha256": "0b6ab9adc4a49f1e9739cf139ffde7ae4f5ee8a8f213c2cdea6d2e082d347bfe",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSMomentLocalizer.lean",
-    "source_sha256": "dcde4daecc569302ea59438db444c14fb9d76ced4c026d62f8e660bbed70ae41",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSMovingZeroCounts.lean",
-    "source_sha256": "5b8c4c9bf8e8850353fbb8e2cc8242e8e38271cf42bb981157ffb65f61a6c53e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSOpenSector.lean",
-    "source_sha256": "b2d437aad49a90e39f8cdca3186bce3bac5a6e3598e559c66a5fc8ec7508c38a",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSPointwiseGaussian.lean",
-    "source_sha256": "6734d28bd5dc66d1e1a953cb6167238f591d653694c1a3a5aa458fb3bf31dfda",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSQuadraticEntire.lean",
-    "source_sha256": "c3a4610b61753d2204f4966e459e0b6168d1d69a9284e1546756eccdd3cf79a0",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSRateStepAngle.lean",
-    "source_sha256": "ae63b91eb11459236e4aba1d92d583a661c5d06ecd1f4751a313be9b4e706491",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSSectorLogGeometry.lean",
-    "source_sha256": "754b430a224fd4d36297f8cc9e2851664e823dd2f2a06ecd9728f55c559f03a0",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSSectorPhragmenLindelof.lean",
-    "source_sha256": "f1c541f53eefaadc7f304882610ec1325e6e5a3f5b7fe547f0ad663fe0a13831",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSSharpQuadraticEntire.lean",
-    "source_sha256": "b9152843cad456e06ad51024d25d209431501611211f2c3021b14fc20ea8fcf7",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSSharpWeightedFourierPair.lean",
-    "source_sha256": "003e3a15870d1c7976615b23af7e4c8d2d3aacedce5a9ca220d21f2c25c4a9a3",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSSharpWeightedRoot.lean",
-    "source_sha256": "99cf65bda23e418ab536fedb03571ad2208039678e95174365ad2fbccc60ff2b",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageAFrequencyBounds.lean",
-    "source_sha256": "5de52b2b9dc5f732aa4d50aa9879068c54801dfae7df8237bf2b95ba8c66c6e5",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageAMoments.lean",
-    "source_sha256": "f642f99e6cb0931213c6065d18b48fb4b1cb29c13de44972f3516f521ffd81d6",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageAPhysicalBounds.lean",
-    "source_sha256": "a5e9060a205383c604995f65a4fa4bbf0d09c6cc71c209381647889c26d423da",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageATranslationBounds.lean",
-    "source_sha256": "e9f28aa33028a8001349effb357247fb077b54b11d5800671f1eb299a10fadf9",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageBFactorial.lean",
-    "source_sha256": "b27c38c504828c0874522c70c7063138e4e78a36113c3b860bdfeb7f1a390c8f",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageBLocalization.lean",
-    "source_sha256": "52db4367831b8357af5a8c8ea94fec1f9af47a5a1fb3bceca5e3af781d44116b",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageBParameters.lean",
-    "source_sha256": "1edaa52f5fd6eb7d3f7fc683c17dcfd8f459c0ae5411aac8cc310a6532e18c3e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSStageBRecurrence.lean",
-    "source_sha256": "cd3351a53cecf9cc16cdeaf147b8a99abda8e0d2687c33a0fef12ca388886a33",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSTruncatedPower.lean",
-    "source_sha256": "01c65e29a00d7b3e38d8ea893b19c8048a5bbd9b34385e1b01f0fd2c91296810",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSUniformRateStep.lean",
-    "source_sha256": "dafe65f32b9462fd4d0382f92c1f745c4da5b3e20b53e63ca8fe380460956884",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSWeightedPrincipalRoot.lean",
-    "source_sha256": "1daa4a5abaf854eb91d4d4295a0b4720c4f5d5bab8082809e4bbdd07f53b736c",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSWeightedRootContinuity.lean",
-    "source_sha256": "bc2e2f8d7a357654b8de50f70b2d1f9b09d077a1cac77a41bd5195effc86a971",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/KNSWeightedRootSector.lean",
-    "source_sha256": "4468ab52a3b53a92d2ea1a566336742eca94b22d79eca7e7382b47a84c9abb08",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/L2LimitBound.lean",
-    "source_sha256": "206ee29c42c043c4b9cf84ad5e5c046a57507b0cad00a7bb4aa3b3f01d46f448",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/LocalSelectedZeroJensen.lean",
-    "source_sha256": "fe678148569e9507ce0f26dd2e2a7d513497835449051c8d103107c965084d31",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Sampling/LocalSobolev.lean",
@@ -4760,29 +4110,9 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/OrderOneFourierPairedTraceBridge.lean",
-    "source_sha256": "15be100e87c067453fee120b3d8d4a44d3c2a905bbcc0368d3ba46348a134d94",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/OrderTwoGraphHermiteBridge.lean",
-    "source_sha256": "e3d1655eb29467c036cac20e18aea267f9322a3121bf89259799fc89ca085494",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/PaleyWienerRepresentative.lean",
     "source_sha256": "d17c55492fad9541ad31a8473b8e09ac66b4638538889beefbf9c5e9bc983bfe",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/PeriodThreeExtension.lean",
-    "source_sha256": "70601cb6591256736cc8c3c33caaf096e6cbf3edc5b638483fbceb1a5776f45f",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/PeriodicPoincare.lean",
-    "source_sha256": "8717701d3b1e34599781e0865a5c8500ca11dd914765f153a129c3f6efcedcdc",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Sampling/PositiveSeparation.lean",
@@ -4795,24 +4125,9 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/PureDerivativeEnergy.lean",
-    "source_sha256": "437aafbadb9ea7ae123f810c2409c429681dcac663f1a43dd9e9fda092d8a98e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/QuadraticSectorBound.lean",
-    "source_sha256": "28382336d63a40bad2e6550fe4ee632976a9f490eb2911f001832e763789c1ca",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/SeparatedDecay.lean",
     "source_sha256": "3676d56478e49291c5de337ff730ab26b28b76748f250cda1127862ff4d90e2b",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/SignedSquareChartBounds.lean",
-    "source_sha256": "c0db345356fda386d21e018c5db3d6cf3afb6037b68287944b75672a9c322ebe",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Sampling/SignedSquareChartRemainder.lean",
@@ -4825,34 +4140,14 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/SignedSquareFiniteChart.lean",
-    "source_sha256": "1e916e3ae0061cd1fbef7ca6fa90292f66e3f5b70b5d3c5a28ac81aa4f688a6e",
-    "port": "module port"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/SignedSquareNormalizedReciprocal.lean",
-    "source_sha256": "8b71d265b8caaa0af510cab1f9f80710e73a56a3413cdd82060f99b338db6fe2",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/SignedSquareSobolevDomain.lean",
     "source_sha256": "0d07a84b306a2b6914f1b3641e9b524fabe220af36414f3aa70a7d2ab598498f",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Sampling/SignedSquareSpectralTransfer.lean",
-    "source_sha256": "e0a807e2e21853aeb9ca31edd80c5e70c60cc85ee276fc3b4e9968a4ccea9266",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Sampling/SignedSquareWeightedChart.lean",
     "source_sha256": "35f4b6c049953fa9f4d9ed895e392e48fc32cb1554a767edafda849a2522c805",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Sampling/SignedSumCoefficientEquiv.lean",
-    "source_sha256": "03b67430e393a944114a621de652ad41313462b041043c856cb1f6dc9eb5175a",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Sampling/UpperLargeSieve.lean",
@@ -4875,19 +4170,9 @@
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
   },
   {
-    "path": "MeyerGeneralProblem/Trace/PointTrace.lean",
-    "source_sha256": "173500408eec6cca740c654fab5d40facd8513c9c147fbb1aa692089eec8d2a1",
-    "port": "module port"
-  },
-  {
     "path": "MeyerGeneralProblem/Trace/Presentation.lean",
     "source_sha256": "0d3a6e9af72717ddc5789ae5a5d7234d8225cdf614440631c7efd66d7d5040b6",
     "port": "4d3163a0ce1dd93fa48b7d4677fe78db15c0af9c"
-  },
-  {
-    "path": "MeyerGeneralProblem/Trace/SamplingCokernel.lean",
-    "source_sha256": "0e00b7eb21265fc88822e1abb1f37115e00a8c7d3e82f0ef0f7555eb5cd51815",
-    "port": "module port"
   },
   {
     "path": "MeyerGeneralProblem/Trace/System.lean",

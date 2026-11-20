@@ -11,13 +11,33 @@
     "MeyerGeneralProblem.modulatedAffineDiracComb_apply",
     "MeyerGeneralProblem.finiteExponentialMultiplication_on_tests",
     "MeyerGeneralProblem.exists_latticeOrbitResidueRows_cyclotomic_finrank",
-    "MeyerGeneralProblem.mem_affineLatticeUnionCarrier"
+    "MeyerGeneralProblem.mem_affineLatticeUnionCarrier",
+    "MeyerGeneralProblem.mem_atomicSupportUnion_iff",
+    "MeyerGeneralProblem.temperedFourierLinearMap_apply",
+    "MeyerGeneralProblem.mem_distributionalMeyerPairSpace_iff",
+    "MeyerGeneralProblem.atomicCoefficientLinearMap_on_tests",
+    "MeyerGeneralProblem.commonCarrierHoleRows_apply_pair",
+    "MeyerGeneralProblem.FiniteHoleEnvelope.nullity_eq_dimension_sub_rank",
+    "MeyerGeneralProblem.mem_finiteHoleEnvelopeSpace",
+    "MeyerGeneralProblem.mem_latticeDirectionClass",
+    "MeyerGeneralProblem.latticeOrbitSynthesis_apply",
+    "MeyerGeneralProblem.latticeOrbitResidueRows_apply_entry"
   ],
   "definition_names": [
     "MeyerGeneralProblem.LocallyFiniteCarrier.isolationSchwartz",
     "MeyerGeneralProblem.modulatedAffineDiracComb",
     "MeyerGeneralProblem.finiteExponentialMultiplication",
-    "MeyerGeneralProblem.affineLatticeUnionCarrier"
+    "MeyerGeneralProblem.affineLatticeUnionCarrier",
+    "MeyerGeneralProblem.atomicSupportUnion",
+    "MeyerGeneralProblem.temperedFourierLinearMap",
+    "MeyerGeneralProblem.DistributionalMeyerPairSpace",
+    "MeyerGeneralProblem.atomicCoefficientLinearMap",
+    "MeyerGeneralProblem.commonCarrierHoleRows",
+    "MeyerGeneralProblem.FiniteHoleEnvelope.nullity",
+    "MeyerGeneralProblem.finiteHoleEnvelopeSpace",
+    "MeyerGeneralProblem.latticeDirectionClass",
+    "MeyerGeneralProblem.latticeOrbitSynthesis",
+    "MeyerGeneralProblem.latticeOrbitResidueRows"
   ],
   "permitted_axioms": [
     "propext",

@@ -170,6 +170,126 @@
           "Classical.choice"
         ],
         "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.mem_atomicSupportUnion_iff",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.temperedFourierLinearMap_apply",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.mem_distributionalMeyerPairSpace_iff",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.atomicCoefficientLinearMap_on_tests",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.commonCarrierHoleRows_apply_pair",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.FiniteHoleEnvelope.nullity_eq_dimension_sub_rank",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.mem_finiteHoleEnvelopeSpace",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.mem_latticeDirectionClass",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.latticeOrbitSynthesis_apply",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "MeyerGeneralProblem.latticeOrbitResidueRows_apply_entry",
+        "file": "WholeSpace/Solution.lean",
+        "comparator_config": "WholeSpace/comparator.json",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "literature_dependencies": []
       }
     ],
     "notes": "The counts refer to Solution. Intentional Challenge holes are named in Comparator. The permitted axiom set bounds dependencies. Use the mechanical report for a check of the exact revision."

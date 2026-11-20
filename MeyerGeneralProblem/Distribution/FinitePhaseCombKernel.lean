@@ -30,7 +30,7 @@ structure AffineCombTerm where
   coefficient : ℂ
 
 /-- The original tempered distribution defined by one comb summand. -/
-def AffineCombTerm.distribution (q : AffineCombTerm) (w : ℝ) (hw : 0 < w) :
+abbrev AffineCombTerm.distribution (q : AffineCombTerm) (w : ℝ) (hw : 0 < w) :
     TemperedDistribution ℝ ℂ :=
   q.coefficient • modulatedAffineDiracComb w hw q.origin q.frequency
 

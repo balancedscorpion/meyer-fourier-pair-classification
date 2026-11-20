@@ -136,7 +136,8 @@ theorem lpIntegratedZeroDiagonal_torusPoissonCayleyCutoffDefect_eq_mul_energy
     change P - W * P * W.adjoint =
       (P - C * P * C.adjoint) + C * (P - V * P * V.adjoint) * C.adjoint
     rw [hW, hAdj]
-    noncomm_ring
+    simp only [mul_sub, sub_mul, mul_assoc]
+    abel
   have hPos (q : ℕ) (t : ℝ) (f : SeqL2(d → ℤ)) : 0 ≤ (⟪f, L q t f⟫_ℂ).re := by
     have ⟨ha, hmul⟩ := torusPoissonCayleyCutoffDefect_is_projection β S T hT hCont hCount hAdvance t q
     change (L q t).adjoint = L q t at ha

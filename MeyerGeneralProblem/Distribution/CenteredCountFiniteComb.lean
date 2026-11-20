@@ -21,7 +21,7 @@ open Filter Set
 open scoped BigOperators FourierTransform SchwartzMap
 
 /-- The distribution is a finite sum of actual modulated Dirac combs. -/
-def IsFiniteModulatedDiracCombSum (T : TemperedDistribution ℝ ℂ) : Prop :=
+abbrev IsFiniteModulatedDiracCombSum (T : TemperedDistribution ℝ ℂ) : Prop :=
   ∃ (ι : Type) (inst : Fintype ι), letI := inst
     ∃ (q : ι → AffineCombTerm) (w : ι → ℝ) (hw : ∀ i, 0 < w i),
       T = ∑ i, (q i).distribution (w i) (hw i)
